@@ -23,14 +23,14 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info with Logo MQA-03.png */}
           <div>
-            <Link to="/services/software-development/qa-services" style={{ display: 'inline-block', marginBottom: '20px' }}>
+            <Link to="/" style={{ display: 'inline-block', marginBottom: '20px' }}>
               <img
                 src={logoFooter}
                 alt="Magnum Quality Assurance Logo"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = favIcon;
                 }}
-                style={{ height: '56px', maxWidth: '240px', objectFit: 'contain', display: 'block' }}
+                style={{ height: '64px', maxWidth: '260px', objectFit: 'contain', display: 'block' }}
               />
             </Link>
 

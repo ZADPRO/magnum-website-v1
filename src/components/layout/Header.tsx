@@ -13,10 +13,10 @@ export const Header: React.FC = () => {
 
   return (
     <header className="glass-panel" style={{ position: 'sticky', top: 0, zIndex: 1000, background: '#ffffff', borderBottom: '1px solid var(--border-subtle)', boxShadow: '0 2px 16px rgba(15,23,42,0.04)' }}>
-      <div className="container" style={{ height: '84px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="container" style={{ height: '92px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         
-        {/* Brand Logo - Prominent & Clearly Visible */}
-        <Link to="/services/software-development/qa-services" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+        {/* Brand Logo - Maximized & Prominently Visible */}
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
           <img
             src={logoNavbar}
             alt="Magnum Quality Assurance Logo"
@@ -24,8 +24,9 @@ export const Header: React.FC = () => {
               (e.target as HTMLImageElement).src = favIcon;
             }}
             style={{
-              height: '58px',
-              maxWidth: '220px',
+              height: '68px',
+              maxWidth: '280px',
+              minWidth: '220px',
               objectFit: 'contain',
               display: 'block'
             }}

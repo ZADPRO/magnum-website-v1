@@ -1,5 +1,6 @@
 import React from 'react';
 import { RouterProvider, useRouter } from './router/RouterContext';
+import { HomePage } from './pages/HomePage';
 import { QAServicesPage } from './pages/QAServicesPage';
 import { GenericServicePage } from './pages/GenericServicePage';
 import { servicesMegaMenuData, mainNavRoutes } from './router/routesData';
@@ -7,12 +8,17 @@ import { servicesMegaMenuData, mainNavRoutes } from './router/routesData';
 const AppRoutes: React.FC = () => {
   const { currentPath } = useRouter();
 
-  // Check if currentPath is full QA Services page
-  if (currentPath === '/services/software-development/qa-services' || currentPath === '/') {
+  // Root / and /home routes render dedicated Scalo HomePage
+  if (currentPath === '/' || currentPath === '/home') {
+    return <HomePage />;
+  }
+
+  // Full QA Services & Accessibility page route
+  if (currentPath === '/services/software-development/qa-services') {
     return <QAServicesPage />;
   }
 
-  // Check if currentPath matches any subcategory child route
+  // Check subcategory child routes
   for (const subcategory of servicesMegaMenuData) {
     for (const child of subcategory.children) {
       if (child.path === currentPath) {
@@ -23,27 +29,25 @@ const AppRoutes: React.FC = () => {
           <GenericServicePage
             title={child.title}
             category={subcategory.title}
-            path={child.path}
           />
         );
       }
     }
   }
 
-  // Check if currentPath matches main nav routes
+  // Check main nav routes
   const mainRoute = mainNavRoutes.find(r => r.path === currentPath);
   if (mainRoute) {
     return (
       <GenericServicePage
         title={mainRoute.title}
         category="Magnum Quality Assurance"
-        path={mainRoute.path}
       />
     );
   }
 
-  // Default fallback to QA Services page
-  return <QAServicesPage />;
+  // Default fallback to HomePage
+  return <HomePage />;
 };
 
 export function App() {
