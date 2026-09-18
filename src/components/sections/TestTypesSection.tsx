@@ -108,7 +108,7 @@ export const TestTypesSection: React.FC = () => {
             Types of Software Tests <span className="text-gradient">We Conduct</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-            Scalo delivers complete quality assurance across 10 specialized testing disciplines to safeguard every layer of your application architecture.
+            Magnum Quality Assurance delivers complete quality assurance across 10 specialized testing disciplines to safeguard every layer of your application architecture.
           </p>
         </div>
 
@@ -188,7 +188,7 @@ export const TestTypesSection: React.FC = () => {
                 <span style={{ fontSize: '2.5rem', background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: '12px' }}>{selectedType.icon}</span>
                 <div>
                   <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0f172a' }}>{selectedType.title}</h3>
-                  <span style={{ color: 'var(--brand-emerald)', fontSize: '0.9rem', fontWeight: 600 }}>Scalo QA Discipline</span>
+                  <span style={{ color: 'var(--brand-emerald)', fontSize: '0.9rem', fontWeight: 600 }}>Magnum QA Discipline</span>
                 </div>
               </div>
 

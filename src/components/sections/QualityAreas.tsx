@@ -54,7 +54,7 @@ export const QualityAreas: React.FC = () => {
             8 Key Areas of <span className="text-gradient">Software Quality</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-            Scalo structures software testing around the international ISO 25010 Quality Model to evaluate every metric of software health.
+            Magnum Quality Assurance structures software testing around the international ISO 25010 Quality Model to evaluate every metric of software health.
           </p>
         </div>
 

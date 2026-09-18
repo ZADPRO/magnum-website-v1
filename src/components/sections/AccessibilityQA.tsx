@@ -82,7 +82,7 @@ export const AccessibilityQA: React.FC = () => {
               <span className="text-gradient">Accessibility Testing</span>
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-              Ensure your web, mobile, and SaaS products cater seamlessly to every user regardless of visual, auditory, motor, or cognitive abilities. Scalo’s accessibility testing services combine automated scanning (axe-core, WAVE, Pa11y) with expert manual reviews to guarantee compliance with global legal frameworks.
+              Ensure your web, mobile, and SaaS products cater seamlessly to every user regardless of visual, auditory, motor, or cognitive abilities. Magnum Quality Assurance’s accessibility testing services combine automated scanning (axe-core, WAVE, Pa11y) with expert manual reviews to guarantee compliance with global legal frameworks.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>

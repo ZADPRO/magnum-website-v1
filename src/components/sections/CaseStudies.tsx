@@ -35,7 +35,7 @@ export const CaseStudies: React.FC = () => {
             Proven Results in <span className="text-gradient">Action</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-            Discover how Scalo helped enterprise clients transform quality assurance, reduce defect remediation costs, and accelerate release frequency.
+            Discover how Magnum Quality Assurance helped enterprise clients transform quality assurance, reduce defect remediation costs, and accelerate release frequency.
           </p>
         </div>
 

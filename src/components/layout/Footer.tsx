@@ -1,4 +1,8 @@
 import React from 'react';
+import { Link } from '../../router/RouterContext';
+import { servicesMegaMenuData } from '../../router/routesData';
+import logoFooter from '../../assets/logo/MQA-03.png';
+import favIcon from '../../assets/logo/fav.png';
 
 export const Footer: React.FC = () => {
   return (
@@ -17,29 +21,21 @@ export const Footer: React.FC = () => {
           marginBottom: '60px'
         }}>
           
-          {/* Brand Info */}
+          {/* Brand Info with Logo MQA-03.png */}
           <div>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', marginBottom: '20px' }}>
-              <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '8px',
-                background: 'var(--gradient-brand)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 800,
-                color: '#ffffff'
-              }}>
-                S
-              </div>
-              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0f172a' }}>
-                scalo<span style={{ color: 'var(--brand-green)' }}>.</span>
-              </span>
-            </a>
+            <Link to="/services/software-development/qa-services" style={{ display: 'inline-block', marginBottom: '20px' }}>
+              <img
+                src={logoFooter}
+                alt="Magnum Quality Assurance Logo"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = favIcon;
+                }}
+                style={{ height: '56px', maxWidth: '240px', objectFit: 'contain', display: 'block' }}
+              />
+            </Link>
 
             <p style={{ fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '24px', maxWidth: '300px' }}>
-              Scalo is a global software engineering and QA partner providing software testing, test automation, and digital transformation services.
+              Magnum Quality Assurance is a global software engineering and QA partner providing software testing, test automation, AI consulting, and digital transformation services.
             </p>
 
             <div style={{ display: 'flex', gap: '12px' }}>
@@ -62,37 +58,50 @@ export const Footer: React.FC = () => {
 
           {/* Software Services */}
           <div>
-            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>Services</h4>
+            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>Software Dev</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.85rem' }}>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Custom Development</a></li>
-              <li><a href="#" style={{ color: 'var(--brand-emerald)', textDecoration: 'none', fontWeight: 700 }}>Software QA & Testing</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Accessibility Audits</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Web & Mobile Apps</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>DevOps & Cloud</a></li>
+              {servicesMegaMenuData[1].children.map(c => (
+                <li key={c.path}>
+                  <Link to={c.path} style={{ color: c.isFullPage ? 'var(--brand-emerald)' : 'var(--text-secondary)', textDecoration: 'none', fontWeight: c.isFullPage ? 700 : 400 }}>
+                    {c.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Key Disciplines */}
+          {/* Consulting & Design */}
           <div>
-            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>QA Testing</h4>
+            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>Consulting</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.85rem' }}>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Test Automation</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Performance Testing</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Security Testing</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Accessibility (A11y)</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>API & Integration</a></li>
+              {servicesMegaMenuData[0].children.slice(0, 5).map(c => (
+                <li key={c.path}>
+                  <Link to={c.path} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+                    {c.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Data & Cloud */}
           <div>
-            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>Company</h4>
+            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>Data & Cloud</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.85rem' }}>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>About Scalo</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Leadership</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>SQMS Quality Standard</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Careers</a></li>
-              <li><a href="#" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>News & Insights</a></li>
+              {servicesMegaMenuData[2].children.map(c => (
+                <li key={c.path}>
+                  <Link to={c.path} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+                    {c.title}
+                  </Link>
+                </li>
+              ))}
+              {servicesMegaMenuData[3].children.slice(0, 2).map(c => (
+                <li key={c.path}>
+                  <Link to={c.path} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+                    {c.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -120,7 +129,7 @@ export const Footer: React.FC = () => {
           fontSize: '0.8rem'
         }}>
           <div>
-            © {new Date().getFullYear()} Scalo. All rights reserved. Software Testing & Quality Assurance Division.
+            © {new Date().getFullYear()} Magnum Quality Assurance. All rights reserved. Enterprise Software Engineering & Quality Division.
           </div>
 
           <div style={{ display: 'flex', gap: '24px' }}>

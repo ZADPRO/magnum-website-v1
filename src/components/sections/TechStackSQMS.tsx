@@ -24,16 +24,16 @@ export const TechStackSQMS: React.FC = () => {
         
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
           
-          {/* Left Column: SQMS Framework details */}
+          {/* Left Column: MQMS Framework details */}
           <div>
-            <span className="badge" style={{ marginBottom: '16px' }}>SQMS Quality Standard</span>
+            <span className="badge" style={{ marginBottom: '16px' }}>MQMS Quality Standard</span>
             <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '20px', lineHeight: 1.2, color: '#0f172a' }}>
-              Scalo Quality <br />
+              Magnum Quality <br />
               <span className="text-gradient">Management System</span>
             </h2>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-              The Scalo Quality Management System (SQMS) provides a rigorous, standardized framework for organizing QA teams, defining test metrics, and guaranteeing ISO 25010 compliance across every product build.
+              The Magnum Quality Management System (MQMS) provides a rigorous, standardized framework for organizing QA teams, defining test metrics, and guaranteeing ISO 25010 compliance across every product build.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
@@ -52,7 +52,7 @@ export const TechStackSQMS: React.FC = () => {
             </div>
 
             <a href="#contact" className="btn-secondary">
-              Learn More About SQMS
+              Learn More About MQMS
             </a>
           </div>
 
