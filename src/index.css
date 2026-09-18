@@ -179,6 +179,82 @@ body {
   animation: float 5s ease-in-out infinite;
 }
 
+/* AOS (Animate On Scroll) System */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(36px);
+}
+
+[data-aos="fade-down"] {
+  transform: translateY(-36px);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(36px);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-36px);
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.92);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger Delays */
+[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos-delay="400"] { transition-delay: 0.4s; }
+[data-aos-delay="500"] { transition-delay: 0.5s; }
+
+/* Responsive Grid Layout Classes */
+.responsive-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.responsive-grid-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.responsive-grid-demo {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.responsive-grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.responsive-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 32px;
+  text-align: center;
+}
+
 /* Footer Grid Responsiveness */
 .footer-grid {
   display: grid;
@@ -206,12 +282,53 @@ body {
   }
 }
 
+@media (max-width: 992px) {
+  .responsive-grid-2col,
+  .responsive-grid-hero,
+  .responsive-grid-demo {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
 @media (max-width: 640px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+  .responsive-grid-form {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .responsive-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
   .container {
     padding: 0 4vw;
+  }
+}
+
+/* Testimonials Carousel Card Responsiveness (4 cards per row desktop) */
+.testimonial-card-item {
+  flex: 0 0 calc(25% - 18px);
+  min-width: 0;
+}
+
+@media (max-width: 1280px) {
+  .testimonial-card-item {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+}
+
+@media (max-width: 992px) {
+  .testimonial-card-item {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonial-card-item {
+    flex: 0 0 100%;
   }
 }

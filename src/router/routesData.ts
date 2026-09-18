@@ -80,6 +80,7 @@ export const servicesMegaMenuData: ServiceSubcategory[] = [
 ];
 
 export const mainNavRoutes = [
+  { title: 'Home', path: '/' },
   { title: 'AI Solutions', path: '/ai-solutions' },
   { title: 'IT Outsourcing', path: '/it-outsourcing' },
   { title: 'Technologies', path: '/technologies' },

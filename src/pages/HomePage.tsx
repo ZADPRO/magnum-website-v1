@@ -3,6 +3,7 @@ import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { ContactForm } from '../components/sections/ContactForm';
 import { Link } from '../router/RouterContext';
+import { TestimonialsCarousel } from '../components/sections/TestimonialsCarousel';
 import {
   Sparkles,
   Accessibility,
@@ -146,7 +147,7 @@ export const HomePage: React.FC = () => {
           background: 'radial-gradient(circle at 50% 10%, rgba(16,185,129,0.12) 0%, rgba(255,255,255,1) 70%)',
           borderBottom: '1px solid var(--border-subtle)'
         }}>
-          <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '48px', alignItems: 'center' }}>
+          <div className="container responsive-grid-hero" data-aos="fade-up">
             
             {/* Left Column: Hero Text */}
             <div>
@@ -354,10 +355,10 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Who We Are Section */}
-        <section style={{ padding: '100px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-subtle)' }}>
+        <section style={{ padding: '100px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-subtle)' }} data-aos="fade-up">
           <div className="container">
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+            <div className="responsive-grid-2col">
               
               <div>
                 <span className="badge" style={{ marginBottom: '16px' }}>Who We Are</span>
@@ -379,7 +380,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Certified Standards & Delivery Highlights */}
-              <div className="glass-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-glow)' }}>
+              <div className="glass-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-glow)' }} data-aos="zoom-in">
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '12px' }}>
                   Certified Expertise. Proven Delivery Standards.
                 </h3>
@@ -409,10 +410,10 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Executive Quote Section */}
-        <section style={{ padding: '80px 0', background: '#ffffff', borderBottom: '1px solid var(--border-subtle)' }}>
+        <section style={{ padding: '80px 0', background: '#ffffff', borderBottom: '1px solid var(--border-subtle)' }} data-aos="fade-up">
           <div className="container">
             <div className="glass-card" style={{
-              padding: '48px',
+              padding: '36px',
               background: 'linear-gradient(135deg, rgba(16,185,129,0.06) 0%, #ffffff 100%)',
               border: '1px solid var(--border-glow)',
               textAlign: 'center',
@@ -423,7 +424,7 @@ export const HomePage: React.FC = () => {
                 From Our Delivery Floor
               </span>
 
-              <blockquote style={{ fontSize: '1.3rem', fontWeight: 600, color: '#0f172a', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '24px' }}>
+              <blockquote style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.3rem)', fontWeight: 600, color: '#0f172a', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '24px' }}>
                 “AI transformation is also a software delivery challenge. After 19 years of building enterprise systems, we know how much work sits between a promising idea and a reliable production system. That is the experience our AI experts bring to client projects.”
               </blockquote>
 
@@ -436,7 +437,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Magnum QA in Numbers */}
-        <section style={{ padding: '80px 0', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-subtle)' }}>
+        <section style={{ padding: '80px 0', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-subtle)' }} data-aos="fade-up">
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '48px' }}>
               <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0f172a' }}>
@@ -444,47 +445,43 @@ export const HomePage: React.FC = () => {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px', textAlign: 'center' }}>
+            <div className="responsive-stats-grid">
               <div>
-                <div style={{ fontSize: '3.2rem', fontWeight: 800, color: '#0f172a' }}>19+</div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>years in software delivery</div>
+                <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: '#0f172a' }}>19+</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>years in software delivery</div>
               </div>
               <div>
-                <div style={{ fontSize: '3.2rem', fontWeight: 800, color: 'var(--brand-emerald)' }}>750+</div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 500 }}>projects delivered</div>
+                <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: 'var(--brand-emerald)' }}>750+</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>projects delivered</div>
               </div>
               <div>
-                <div style={{ fontSize: '3.2rem', fontWeight: 800, color: '#0f172a' }}>600+</div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>engineers</div>
+                <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: '#0f172a' }}>600+</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>engineers</div>
               </div>
               <div>
-                <div style={{ fontSize: '3.2rem', fontWeight: 800, color: '#0f172a' }}>100+</div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 500 }}>clients across 13 countries</div>
+                <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: '#0f172a' }}>100+</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>clients across 13 countries</div>
               </div>
               <div>
-                <div style={{ fontSize: '3.2rem', fontWeight: 800, color: 'var(--brand-emerald)' }}>95%</div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--brand-emerald)', fontWeight: 700 }}>of clients come back</div>
+                <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: 'var(--brand-emerald)' }}>95%</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 700 }}>of clients come back</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* 48-Hour Demo Offer */}
-        <section style={{ padding: '90px 0', background: '#ffffff' }}>
+        <section style={{ padding: '90px 0', background: '#ffffff' }} data-aos="fade-up">
           <div className="container">
-            <div className="glass-card" style={{
-              padding: '48px',
+            <div className="glass-card responsive-grid-demo" style={{
+              padding: '36px',
               background: 'linear-gradient(135deg, rgba(16,185,129,0.1) 0%, #ffffff 100%)',
               border: '2px solid var(--brand-green)',
-              borderRadius: 'var(--radius-xl)',
-              display: 'grid',
-              gridTemplateColumns: '1.2fr 0.8fr',
-              gap: '36px',
-              alignItems: 'center'
+              borderRadius: 'var(--radius-xl)'
             }}>
               <div>
                 <span className="badge" style={{ marginBottom: '16px' }}>Rapid Proof-of-Concept</span>
-                <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a', marginBottom: '16px' }}>
+                <h3 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#0f172a', marginBottom: '16px' }}>
                   Test Your AI Product Concept with a Demo Ready in 48 Hours
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '28px' }}>
@@ -565,38 +562,18 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Client Testimonials Section */}
-        <section style={{ padding: '100px 0', background: '#ffffff' }}>
+        <section style={{ padding: '100px 0', background: '#ffffff' }} data-aos="fade-up">
           <div className="container">
             
-            <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 60px auto' }}>
+            <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px auto' }}>
               <span className="badge" style={{ marginBottom: '16px' }}>Client Feedback</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', color: '#0f172a' }}>
                 What Our Clients <span className="text-gradient">Tell Us</span>
               </h2>
             </div>
 
-            {/* Testimonials Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '32px' }}>
-              {testimonialsData.slice(0, 6).map((t, idx) => (
-                <div key={idx} className="glass-card" style={{ padding: '32px', background: '#ffffff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ color: 'var(--brand-emerald)', marginBottom: '12px', display: 'flex', gap: '4px' }}>
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} style={{ fontSize: '1rem' }}>★</span>
-                      ))}
-                    </div>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '20px' }}>
-                      “{t.quote}”
-                    </p>
-                  </div>
-
-                  <div style={{ paddingTop: '16px', borderTop: '1px solid var(--border-subtle)' }}>
-                    <strong style={{ color: '#0f172a', fontSize: '0.95rem', display: 'block' }}>{t.author}</strong>
-                    <span style={{ color: 'var(--brand-emerald)', fontSize: '0.8rem', fontWeight: 600 }}>{t.role} · {t.company}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Sliding Interactive Testimonials Carousel */}
+            <TestimonialsCarousel testimonials={testimonialsData} />
 
           </div>
         </section>
