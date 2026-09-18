@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PartyPopper } from '../ui/Icons';
 
 export const ContactForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -48,7 +49,9 @@ export const ContactForm: React.FC = () => {
               borderRadius: 'var(--radius-lg)',
               border: '1px solid #10b981'
             }}>
-              <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🎉</div>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+                <PartyPopper size={48} color="var(--brand-emerald)" />
+              </div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>Thank You for Reaching Out!</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', maxWidth: '500px', margin: '0 auto' }}>
                 Our Senior QA Director will review your project requirements and get back to you within 24 business hours.

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Accessibility, FileText, Zap } from '../ui/Icons';
 
 export const AccessibilityQA: React.FC = () => {
   return (
@@ -17,7 +18,9 @@ export const AccessibilityQA: React.FC = () => {
           <div className="glass-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-glow)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <span style={{ fontSize: '2rem' }}>♿</span>
+                <div style={{ background: 'rgba(16,185,129,0.1)', padding: '10px', borderRadius: '12px', display: 'flex' }}>
+                  <Accessibility size={28} color="var(--brand-emerald)" />
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a' }}>Accessibility (A11y) Audit</h3>
                   <p style={{ fontSize: '0.8rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>WCAG 2.1 Level AA / AAA Benchmark</p>
@@ -87,11 +90,17 @@ export const AccessibilityQA: React.FC = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
               <div>
-                <h4 style={{ color: '#0f172a', fontSize: '1rem', fontWeight: 700, marginBottom: '6px' }}>📜 VPAT Documentation</h4>
+                <h4 style={{ color: '#0f172a', fontSize: '1rem', fontWeight: 700, marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <FileText size={18} color="var(--brand-emerald)" />
+                  VPAT Documentation
+                </h4>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>Formal Voluntary Product Accessibility Template for government & enterprise procurements.</p>
               </div>
               <div>
-                <h4 style={{ color: '#0f172a', fontSize: '1rem', fontWeight: 700, marginBottom: '6px' }}>⚡ Automated CI Checks</h4>
+                <h4 style={{ color: '#0f172a', fontSize: '1rem', fontWeight: 700, marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Zap size={18} color="var(--brand-emerald)" />
+                  Automated CI Checks
+                </h4>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>Continuous accessibility regression testing built directly into your GitHub / GitLab CI pipeline.</p>
               </div>
             </div>

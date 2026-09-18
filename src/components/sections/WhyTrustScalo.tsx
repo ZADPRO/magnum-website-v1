@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trophy, GraduationCap, Settings, TrendingUp } from '../ui/Icons';
 
 export const WhyTrustScalo: React.FC = () => {
   return (
@@ -27,10 +28,9 @@ export const WhyTrustScalo: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '1.5rem',
               marginBottom: '20px'
             }}>
-              🏆
+              <Trophy size={26} color="var(--brand-emerald)" />
             </div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>Profound QA Expertise</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -47,10 +47,9 @@ export const WhyTrustScalo: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '1.5rem',
               marginBottom: '20px'
             }}>
-              🎓
+              <GraduationCap size={26} color="var(--brand-emerald)" />
             </div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>60+ ISTQB QA Specialists</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -67,10 +66,9 @@ export const WhyTrustScalo: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '1.5rem',
               marginBottom: '20px'
             }}>
-              ⚙️
+              <Settings size={26} color="var(--brand-emerald)" />
             </div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>MQMS Measurement System</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -87,10 +85,9 @@ export const WhyTrustScalo: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '1.5rem',
               marginBottom: '20px'
             }}>
-              📈
+              <TrendingUp size={26} color="var(--brand-emerald)" />
             </div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>SLA & Metric Guarantees</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>

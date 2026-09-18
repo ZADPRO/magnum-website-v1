@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Zap, LinkIcon, Target, Eye, Smartphone, Rocket, RefreshCw, CheckCircle2, Bot, Accessibility, Check } from '../ui/Icons';
 
 interface TestType {
   id: string;
@@ -6,7 +7,7 @@ interface TestType {
   badge?: string;
   shortDesc: string;
   fullDesc: string;
-  icon: string;
+  icon: React.ReactNode;
   keyBenefits: string[];
 }
 
@@ -16,7 +17,7 @@ export const testTypesData: TestType[] = [
     title: 'Unit Tests',
     shortDesc: 'Isolated component and function logic verification.',
     fullDesc: 'Verification of individual code components, functions, or modules in isolation to validate that internal logic operates accurately before integration into the master branch.',
-    icon: '⚡',
+    icon: <Zap size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Early bug identification', 'Simplifies code refactoring', 'Ensures code modularity']
   },
   {
@@ -24,7 +25,7 @@ export const testTypesData: TestType[] = [
     title: 'Integration Tests',
     shortDesc: 'Inter-service API & database communication validation.',
     fullDesc: 'Verifying that distinct software modules, microservices, and external API interfaces interact smoothly and exchange data reliably without failure.',
-    icon: '🔗',
+    icon: <LinkIcon size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Seamless API interaction', 'Prevents data sync errors', 'Validates microservice contracts']
   },
   {
@@ -32,7 +33,7 @@ export const testTypesData: TestType[] = [
     title: 'Functional Tests',
     shortDesc: 'Verification against user stories & business requirements.',
     fullDesc: 'Evaluating the application against functional specification requirements to confirm that features, user workflows, and business rules behave correctly under real-world usage.',
-    icon: '🎯',
+    icon: <Target size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Validates feature specifications', 'Ensures correct user flows', 'Eliminates business logic flaws']
   },
   {
@@ -40,7 +41,7 @@ export const testTypesData: TestType[] = [
     title: 'Usability Tests',
     shortDesc: 'UX clarity, navigational ease, and end-user satisfaction.',
     fullDesc: 'Assessing user interface clarity, user-friendliness, task completion efficiency, and overall digital experience for end users across target demographics.',
-    icon: '👁️',
+    icon: <Eye size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Higher user retention', 'Intuitive UI navigation', 'Reduces customer support tickets']
   },
   {
@@ -48,7 +49,7 @@ export const testTypesData: TestType[] = [
     title: 'Compatibility Tests',
     shortDesc: 'Cross-browser, OS, device, and screen resolution testing.',
     fullDesc: 'Validating multi-platform, multi-browser, multi-device, and cross-operating system performance to ensure uniform behavior across diverse user environments.',
-    icon: '📱',
+    icon: <Smartphone size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Consistent cross-device UX', 'Broad platform support', 'Eliminates rendering glitches']
   },
   {
@@ -56,7 +57,7 @@ export const testTypesData: TestType[] = [
     title: 'Performance Tests',
     shortDesc: 'Stress, load, latency, and system capacity benchmarking.',
     fullDesc: 'Evaluating system throughput, latency, responsiveness, scalability, and stability under peak traffic and heavy stress conditions using tools like JMeter and K6.',
-    icon: '🚀',
+    icon: <Rocket size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Zero crash under heavy traffic', 'Optimized server throughput', 'Sustained sub-second latency']
   },
   {
@@ -64,7 +65,7 @@ export const testTypesData: TestType[] = [
     title: 'Regression Tests',
     shortDesc: 'Automated safety checks on existing codebase features.',
     fullDesc: 'Executing automated and manual test suites after code changes or updates to ensure existing functionality remains uncorrupted when new features are deployed.',
-    icon: '🔄',
+    icon: <RefreshCw size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Risk-free code deployments', 'Protects existing features', 'Accelerates release velocity']
   },
   {
@@ -72,7 +73,7 @@ export const testTypesData: TestType[] = [
     title: 'Acceptance Tests (UAT)',
     shortDesc: 'Pre-launch validation against commercial criteria.',
     fullDesc: 'Validating end-to-end product builds against customer criteria, business KPIs, and release readiness benchmarks prior to commercial production launch.',
-    icon: '✅',
+    icon: <CheckCircle2 size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Client sign-off readiness', 'Validates business criteria', 'Prevents post-launch surprises']
   },
   {
@@ -80,7 +81,7 @@ export const testTypesData: TestType[] = [
     title: 'QA Automation Tests',
     shortDesc: 'Modern scriptable test automation (Cypress, Selenium).',
     fullDesc: 'Leveraging modern automation frameworks (Cypress, Selenium, Postman, SoapUI) to automate repetitive test scripts, increase test coverage, and accelerate release cycles.',
-    icon: '🤖',
+    icon: <Bot size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['Up to 80% faster execution', 'Continuous CI/CD feedback', 'High coverage & repeatability']
   },
   {
@@ -89,7 +90,7 @@ export const testTypesData: TestType[] = [
     badge: 'NEW REQUIREMENT',
     shortDesc: 'WCAG 2.1 AA/AAA, ADA & Section 508 compliance testing.',
     fullDesc: 'Validating web, mobile, and digital products against global accessibility standards (WCAG 2.1 AA/AAA, ADA, Section 508, EN 301 549) to ensure full usability for individuals with visual, auditory, motor, or cognitive disabilities.',
-    icon: '♿',
+    icon: <Accessibility size={28} color="var(--brand-emerald)" />,
     keyBenefits: ['100% WCAG 2.1 Compliance', 'Prevents ADA legal liability', 'Inclusive UI for all users']
   }
 ];
@@ -157,7 +158,7 @@ export const TestTypesSection: React.FC = () => {
                   </span>
                 )}
 
-                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>{test.icon}</div>
+                <div style={{ marginBottom: '12px' }}>{test.icon}</div>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
                   {test.title}
                 </h3>
@@ -185,7 +186,9 @@ export const TestTypesSection: React.FC = () => {
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '20px', marginBottom: '24px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <span style={{ fontSize: '2.5rem', background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: '12px' }}>{selectedType.icon}</span>
+                <div style={{ background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: '12px', display: 'flex' }}>
+                  {selectedType.icon}
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0f172a' }}>{selectedType.title}</h3>
                   <span style={{ color: 'var(--brand-emerald)', fontSize: '0.9rem', fontWeight: 600 }}>Magnum QA Discipline</span>
@@ -216,7 +219,7 @@ export const TestTypesSection: React.FC = () => {
                   borderRadius: 'var(--radius-sm)',
                   border: '1px solid var(--border-subtle)'
                 }}>
-                  <span style={{ color: 'var(--brand-green)', fontWeight: 800 }}>✓</span>
+                  <Check size={18} color="var(--brand-green)" />
                   <span style={{ fontSize: '0.9rem', color: '#0f172a', fontWeight: 500 }}>{b}</span>
                 </div>
               ))}
