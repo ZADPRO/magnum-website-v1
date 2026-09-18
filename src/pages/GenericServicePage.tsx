@@ -8,14 +8,11 @@ import {
   CheckCircle2,
   ShieldCheck,
   Zap,
-  Code,
   Database,
   Cloud,
   Users,
   TrendingUp,
-  Globe,
-  ArrowRight,
-  Accessibility
+  ArrowRight
 } from '../components/ui/Icons';
 
 interface GenericServicePageProps {

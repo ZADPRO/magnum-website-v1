@@ -2,15 +2,11 @@ import React from 'react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { ContactForm } from '../components/sections/ContactForm';
-import { Link } from '../router/RouterContext';
 import {
   Globe,
   CheckCircle2,
   ShieldCheck,
   Zap,
-  Users,
-  ArrowRight,
-  TrendingUp,
   Sparkles
 } from '../components/ui/Icons';
 
