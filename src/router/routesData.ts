@@ -37,7 +37,8 @@ export const servicesMegaMenuData: ServiceSubcategory[] = [
       { title: 'MVP Services', path: '/services/software-development/mvp-services' },
       { title: 'System Integration', path: '/services/software-development/system-integration' },
       { title: 'White Label Software', path: '/services/software-development/white-label-software' },
-      { title: 'QA & Testing', path: '/services/software-development/qa-services', isFullPage: true }
+      { title: 'QA & Testing', path: '/services/software-development/qa-services', isFullPage: true },
+      { title: 'Accessibility Testing (A11y)', path: '/services/software-development/accessibility-testing', isFullPage: true }
     ]
   },
   {

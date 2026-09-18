@@ -2,6 +2,7 @@ import React from 'react';
 import { RouterProvider, useRouter } from './router/RouterContext';
 import { HomePage } from './pages/HomePage';
 import { QAServicesPage } from './pages/QAServicesPage';
+import { AccessibilityPage } from './pages/AccessibilityPage';
 import { GenericServicePage } from './pages/GenericServicePage';
 import { servicesMegaMenuData, mainNavRoutes } from './router/routesData';
 
@@ -11,6 +12,11 @@ const AppRoutes: React.FC = () => {
   // Root / and /home routes render dedicated Scalo HomePage
   if (currentPath === '/' || currentPath === '/home') {
     return <HomePage />;
+  }
+
+  // Dedicated Accessibility Testing (A11y) page route
+  if (currentPath === '/services/software-development/accessibility-testing' || currentPath === '/services/accessibility-testing') {
+    return <AccessibilityPage />;
   }
 
   // Full QA Services & Accessibility page route

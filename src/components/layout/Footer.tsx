@@ -14,10 +14,7 @@ export const Footer: React.FC = () => {
     }}>
       <div className="container">
         
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1.5fr repeat(4, 1fr)',
-          gap: '40px',
+        <div className="footer-grid" style={{
           marginBottom: '60px'
         }}>
           
