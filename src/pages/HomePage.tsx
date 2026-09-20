@@ -9,17 +9,17 @@ import {
   Accessibility,
   Bot,
   Code,
-  Database,
-  Cloud,
   Users,
   Check,
   ShieldCheck,
   Zap,
   TrendingUp,
-  Globe,
   Award,
   ChevronRight,
-  ArrowRight
+  ArrowRight,
+  Smartphone,
+  CheckCircle2,
+  Target
 } from '../components/ui/Icons';
 
 export const HomePage: React.FC = () => {
@@ -81,55 +81,119 @@ export const HomePage: React.FC = () => {
     }
   ];
 
+  // Highlighted Core Testing Specializations
+  const primaryTestingSpecializations = [
+    {
+      id: 'accessibility',
+      title: 'Accessibility Testing (A11y)',
+      tagline: 'WCAG 2.1 AA/AAA & VPAT Compliance',
+      description: 'Comprehensive evaluation of digital products for users with visual, auditory, motor, and cognitive impairments using screen readers (NVDA, JAWS, VoiceOver), keyboard focus verification, and Pa11y automated checks.',
+      icon: <Accessibility size={32} color="var(--brand-emerald)" />,
+      metrics: '100% WCAG Conformance Rate',
+      features: ['Screen Reader Audits (NVDA/JAWS)', 'Keyboard Traps & Focus State Verification', 'Color Contrast & ARIA Markup Audits', 'VPAT Certification & Compliance Reports'],
+      link: '/services/software-development/accessibility-testing'
+    },
+    {
+      id: 'automation',
+      title: 'Test Automation & CI/CD',
+      tagline: 'Speed Up Releases with 90%+ Test Coverage',
+      description: 'End-to-end test automation frameworks built with Playwright, Cypress, Selenium, and Appium seamlessly integrated into GitHub Actions, GitLab, and Jenkins pipelines for continuous quality regression.',
+      icon: <Bot size={32} color="var(--brand-emerald)" />,
+      metrics: '70% Faster Release Cycles',
+      features: ['Playwright & Cypress E2E Frameworks', 'Parallel Cross-Browser Execution', 'CI/CD Pipeline Integration', 'Self-Healing Automated Test Scripts'],
+      link: '/services/software-development/qa-services'
+    },
+    {
+      id: 'penetration',
+      title: 'Penetration & Security Testing',
+      tagline: 'OWASP Top 10 & Vulnerability Remediation',
+      description: 'Rigorous penetration testing and ethical hacking to identify security vulnerabilities, SQL injection, XSS, authentication bypasses, and data leak vectors across web, API, and cloud infrastructure.',
+      icon: <ShieldCheck size={32} color="var(--brand-emerald)" />,
+      metrics: 'Zero Zero-Day Vulnerabilities',
+      features: ['OWASP Top 10 Vulnerability Audits', 'API & Cloud Infrastructure Pen Testing', 'Static & Dynamic Code Analysis (SAST/DAST)', 'Compliance Support (ISO 27001, SOC 2, GDPR)'],
+      link: '/services/software-development/qa-services'
+    },
+    {
+      id: 'performance',
+      title: 'Performance & Load Testing',
+      tagline: 'High-Throughput Scalability & Stress Testing',
+      description: 'Simulate tens of thousands of concurrent users with Apache JMeter, K6, and Locust to uncover bottlenecks, optimize database queries, evaluate server response times, and guarantee 99.99% uptime.',
+      icon: <Zap size={32} color="var(--brand-emerald)" />,
+      metrics: 'Up to 50k+ Concurrent Users Simulated',
+      features: ['Stress, Spike & Endurance Testing', 'Latency & Database Bottleneck Profiling', 'JMeter & K6 Test Script Generation', 'Real-Time Server Resource Monitoring'],
+      link: '/services/software-development/qa-services'
+    },
+    {
+      id: 'mobile',
+      title: 'Mobile App QA (iOS & Android)',
+      tagline: 'Real Device Cloud & Native Performance Testing',
+      description: 'Rigorous mobile QA across hundreds of physical smartphones and tablets to test touch gestures, network fluctuation (3G/4G/5G/Offline), memory leaks, battery consumption, and OS version compatibility.',
+      icon: <Smartphone size={32} color="var(--brand-emerald)" />,
+      metrics: '500+ Device & OS Combinations',
+      features: ['Native iOS (Swift) & Android (Kotlin) QA', 'Real Device Cloud Testing (BrowserStack)', 'Network Fluctuation & Offline Mode QA', 'Memory & Battery Consumption Audits'],
+      link: '/services/software-development/qa-services'
+    },
+    {
+      id: 'api',
+      title: 'API & Integration Testing',
+      tagline: 'REST, GraphQL, gRPC & Microservices Validation',
+      description: 'Validate backend logic, data contracts, payload structures, authentication tokens, and service-to-service communication using Postman, REST Assured, and Karate Frameworks.',
+      icon: <Code size={32} color="var(--brand-emerald)" />,
+      metrics: '100% Contract Integrity',
+      features: ['Postman & REST Assured Automation', 'GraphQL & gRPC Schema Validation', 'Mock Server & Fault Injection Testing', 'Security & Rate Limiting Verification'],
+      link: '/services/software-development/qa-services'
+    }
+  ];
+
   const whatWeDoServices = [
     {
       num: '01',
-      title: 'AI Consulting',
-      desc: 'We help you assess AI opportunities, use cases, data readiness, governance, and ROI before you invest.',
-      link: '/ai-solutions',
-      icon: <Bot size={28} color="var(--brand-emerald)" />
+      title: 'Software Testing & QA Services',
+      desc: 'Our primary core expertise: End-to-end Manual QA, Test Automation, Accessibility (A11y), Penetration Testing, and Performance Engineering.',
+      link: '/services/software-development/qa-services',
+      icon: <CheckCircle2 size={28} color="var(--brand-emerald)" />
     },
     {
       num: '02',
-      title: 'AI Implementation',
-      desc: 'We design and build RAG systems, AI agents, and custom machine learning applications ready for reliable production use.',
-      link: '/ai-solutions',
-      icon: <Sparkles size={28} color="var(--brand-emerald)" />
+      title: 'Accessibility Testing (A11y)',
+      desc: 'Dedicated WCAG 2.1 AA/AAA auditing, VPAT certification, and screen reader testing to ensure your digital products are 100% accessible to all users.',
+      link: '/services/software-development/accessibility-testing',
+      icon: <Accessibility size={28} color="var(--brand-emerald)" />
     },
     {
       num: '03',
-      title: 'AI Engineers',
-      desc: 'We provide vetted AI specialists and dedicated teams that can join your project within weeks.',
+      title: 'Penetration & Security Testing',
+      desc: 'Ethical penetration testing, OWASP Top 10 vulnerability scanning, API security testing, and compliance readiness (ISO 27001, SOC 2).',
+      link: '/services/software-development/qa-services',
+      icon: <ShieldCheck size={28} color="var(--brand-emerald)" />
+    },
+    {
+      num: '04',
+      title: 'Test Automation & CI/CD',
+      desc: 'Custom automated testing frameworks using Playwright, Cypress, and Selenium to accelerate your deployment pipelines without compromising quality.',
+      link: '/services/software-development/qa-services',
+      icon: <Bot size={28} color="var(--brand-emerald)" />
+    },
+    {
+      num: '05',
+      title: 'Dedicated QA Engineers',
+      desc: 'We provide vetted senior QA engineers, SDETs, and accessibility auditors who seamlessly integrate into your sprint cycles within days.',
       link: '/it-outsourcing',
       icon: <Users size={28} color="var(--brand-emerald)" />
     },
     {
-      num: '04',
-      title: 'IT Staff Nearshoring',
-      desc: 'We provide EU-based engineers with modern tooling, AI-assisted workflows, and strong time-zone overlap.',
-      link: '/it-outsourcing',
-      icon: <Globe size={28} color="var(--brand-emerald)" />
-    },
-    {
-      num: '05',
-      title: 'Custom Software Development',
-      desc: 'We build custom software around your product goals, technical constraints, and delivery timeline.',
-      link: '/services/software-development/custom-software-development',
-      icon: <Code size={28} color="var(--brand-emerald)" />
-    },
-    {
       num: '06',
-      title: 'Data Solutions',
-      desc: 'We build data platforms, pipelines, analytics layers, and governance frameworks for trusted reporting and AI projects.',
-      link: '/services/data/data-analytics',
-      icon: <Database size={28} color="var(--brand-emerald)" />
+      title: 'AI & Data Testing',
+      desc: 'Specialized QA for AI/ML models, RAG pipelines, and data analytics systems—verifying prompt accuracy, data integrity, and model robustness.',
+      link: '/ai-solutions',
+      icon: <Sparkles size={28} color="var(--brand-emerald)" />
     },
     {
       num: '07',
-      title: 'Technology Consulting',
-      desc: 'We advise on technology strategy, architecture, modernization, and sequencing for complex software decisions.',
-      link: '/services/consulting-design/software-assessment',
-      icon: <Zap size={28} color="var(--brand-emerald)" />
+      title: 'Custom Software Development',
+      desc: 'Full-cycle custom software development built from the ground up with quality assurance embedded into every single sprint.',
+      link: '/services/software-development/custom-software-development',
+      icon: <Code size={28} color="var(--brand-emerald)" />
     }
   ];
 
@@ -139,7 +203,7 @@ export const HomePage: React.FC = () => {
 
       <main style={{ flex: 1 }}>
 
-        {/* Hero Section: WOW Factor */}
+        {/* Hero Section: Primary Focus on Software Testing & Quality Assurance */}
         <section style={{
           position: 'relative',
           padding: '90px 0 110px 0',
@@ -152,21 +216,21 @@ export const HomePage: React.FC = () => {
             {/* Left Column: Hero Text */}
             <div>
               <div className="badge" style={{ marginBottom: '20px' }}>
-                <Sparkles size={16} color="var(--brand-emerald)" />
-                <span>Enterprise Engineering & AI Transformation</span>
+                <Target size={16} color="var(--brand-emerald)" />
+                <span>Primary Focus: Enterprise Software Testing & Quality Assurance</span>
               </div>
 
               <h1 style={{
-                fontSize: 'clamp(2.6rem, 5vw, 4rem)',
+                fontSize: 'clamp(2.5rem, 4.8vw, 3.8rem)',
                 fontWeight: 800,
                 lineHeight: 1.15,
                 letterSpacing: '-1px',
                 color: '#0f172a',
                 marginBottom: '24px'
               }}>
-                Your Partner for <br />
-                <span className="text-gradient">Software Development</span> <br />
-                and AI Transformation
+                Global Leader in <br />
+                <span className="text-gradient">Software Testing & QA</span> <br />
+                & Quality Engineering
               </h1>
 
               <p style={{
@@ -176,29 +240,50 @@ export const HomePage: React.FC = () => {
                 marginBottom: '36px',
                 maxWidth: '640px'
               }}>
-                At <strong>Magnum Quality Assurance</strong>, we develop custom software and help companies implement AI by building AI engineering teams and delivering AI consulting. Focused on ROI, not hype.
+                At <strong>Magnum Quality Assurance</strong>, software testing is our primary passion and core competency. From <strong>Accessibility Testing (A11y)</strong> and <strong>Test Automation</strong> to <strong>Penetration Testing</strong>, <strong>Performance QA</strong>, and <strong>Mobile App Validation</strong>, we deliver zero-defect software confidence to global enterprises.
               </p>
+
+              {/* Quick Badge List of Key Testing Capabilities */}
+              <div style={{ display: 'flex', gap: '10px 16px', flexWrap: 'wrap', marginBottom: '32px' }}>
+                {['Accessibility Testing (WCAG 2.1)', 'Automated QA & CI/CD', 'Penetration & Security', 'Performance & Load Testing', 'Mobile & API Testing'].map(cap => (
+                  <span key={cap} style={{
+                    fontSize: '0.825rem',
+                    fontWeight: 700,
+                    color: '#065f46',
+                    background: 'rgba(16,185,129,0.1)',
+                    padding: '6px 14px',
+                    borderRadius: '999px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    border: '1px solid rgba(16,185,129,0.25)'
+                  }}>
+                    <CheckCircle2 size={14} color="var(--brand-emerald)" />
+                    {cap}
+                  </span>
+                ))}
+              </div>
 
               {/* Action Buttons */}
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '48px' }}>
-                <Link to="/it-outsourcing" className="btn-primary">
-                  Hire AI and Software Developers
+                <Link to="/services/software-development/qa-services" className="btn-primary">
+                  Explore Software Testing Services
                   <ArrowRight size={18} color="#ffffff" />
                 </Link>
 
-                <Link to="/contact" className="btn-secondary">
-                  Discuss Software Project
+                <Link to="/services/software-development/accessibility-testing" className="btn-secondary">
+                  Accessibility Testing (A11y)
                 </Link>
               </div>
 
               {/* Client Recognition Badges */}
               <div style={{ paddingTop: '24px', borderTop: '1px solid var(--border-subtle)' }}>
                 <p style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px', marginBottom: '16px', fontWeight: 600 }}>
-                  Recognized by Global Tech Ratings & Industry Awards
+                  Recognized Global QA & Software Quality Leader
                 </p>
 
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'center', opacity: 0.85, flexWrap: 'wrap' }}>
-                  {['Clutch 1000 (2025)', 'Computerworld', 'GoodFirms', 'Forbes Diamonds', 'The Manifest'].map(award => (
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'center', opacity: 0.9, flexWrap: 'wrap' }}>
+                  {['Clutch Top QA Leader', 'ISO 27001 Certified', 'WCAG 2.1 AA Compliant', 'Forbes Diamonds', 'GoodFirms Top Testers'].map(award => (
                     <span key={award} style={{
                       fontSize: '0.85rem',
                       fontWeight: 700,
@@ -220,7 +305,7 @@ export const HomePage: React.FC = () => {
 
             </div>
 
-            {/* Right Column: Highlighted Flagship Feature (Accessibility Testing & QA) */}
+            {/* Right Column: Highlighted Flagship Feature (Accessibility & Core Testing Showcase) */}
             <div style={{ position: 'relative' }}>
               
               <div className="glass-card animate-float" style={{
@@ -243,7 +328,7 @@ export const HomePage: React.FC = () => {
                   letterSpacing: '0.5px',
                   boxShadow: '0 4px 14px rgba(16,185,129,0.4)'
                 }}>
-                  HIGHLIGHTED FEATURE
+                  PRIMARY SPECIALIZATION
                 </span>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
@@ -252,12 +337,12 @@ export const HomePage: React.FC = () => {
                   </div>
                   <div>
                     <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0f172a' }}>Accessibility Testing (A11y)</h3>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>WCAG 2.1 AA/AAA & VPAT Compliance</p>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>WCAG 2.1 AA/AAA & VPAT Certification</p>
                   </div>
                 </div>
 
                 <p style={{ fontSize: '0.925rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                  We ensure digital products cater seamlessly to visual, motor, auditory, and cognitive user needs through screen reader audits (NVDA, JAWS, VoiceOver), keyboard focus management, and automated Pa11y regression checks.
+                  We ensure software products cater seamlessly to visual, motor, auditory, and cognitive user needs through screen reader audits (NVDA, JAWS, VoiceOver), keyboard focus management, contrast checks, and Pa11y regression pipelines.
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '28px' }}>
@@ -266,7 +351,7 @@ export const HomePage: React.FC = () => {
                     <span style={{ color: 'var(--brand-green)', fontWeight: 700 }}>100% Passed</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 14px', background: '#f8fafc', borderRadius: '8px', fontSize: '0.85rem' }}>
-                    <span style={{ fontWeight: 600, color: '#0f172a' }}>Keyboard Navigation Focus</span>
+                    <span style={{ fontWeight: 600, color: '#0f172a' }}>Keyboard Traps & Focus</span>
                     <span style={{ color: 'var(--brand-green)', fontWeight: 700 }}>Zero Traps</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 14px', background: '#f8fafc', borderRadius: '8px', fontSize: '0.85rem' }}>
@@ -275,9 +360,14 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <Link to="/services/software-development/qa-services" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Explore QA & Accessibility Suite →
-                </Link>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <Link to="/services/software-development/accessibility-testing" className="btn-primary" style={{ flex: 1, justifyContent: 'center', fontSize: '0.875rem' }}>
+                    A11y Audit Service →
+                  </Link>
+                  <Link to="/services/software-development/qa-services" className="btn-secondary" style={{ fontSize: '0.875rem' }}>
+                    All QA Services
+                  </Link>
+                </div>
               </div>
 
             </div>
@@ -285,17 +375,100 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* What We Do Section (7 Core Services) */}
+        {/* Dedicated Section: Comprehensive Software Testing & QA Suite */}
+        <section style={{ padding: '100px 0', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-subtle)' }} data-aos="fade-up">
+          <div className="container">
+            
+            <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 60px auto' }}>
+              <span className="badge" style={{ marginBottom: '16px' }}>
+                <CheckCircle2 size={16} color="var(--brand-emerald)" />
+                Core Testing Disciplines
+              </span>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', color: '#0f172a' }}>
+                Our Core Focus: <span className="text-gradient">Software Testing & QA Suite</span>
+              </h2>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                Magnum QA specializes in full-spectrum quality engineering. Whether you need accessibility compliance, fast automated regression test suites, penetration security audits, or high-concurrency load testing, our certified QA engineers have you covered.
+              </p>
+            </div>
+
+            {/* Grid of 6 Major Testing Types */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '28px' }}>
+              {primaryTestingSpecializations.map((spec) => (
+                <div key={spec.id} className="glass-card" style={{
+                  padding: '32px',
+                  background: '#ffffff',
+                  border: '1px solid var(--border-subtle)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+                      <div style={{ background: 'rgba(16,185,129,0.1)', padding: '14px', borderRadius: '16px', display: 'inline-flex' }}>
+                        {spec.icon}
+                      </div>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#065f46', background: '#ecfdf5', padding: '4px 10px', borderRadius: '999px' }}>
+                        {spec.metrics}
+                      </span>
+                    </div>
+
+                    <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>
+                      {spec.title}
+                    </h3>
+                    
+                    <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--brand-emerald)', marginBottom: '14px' }}>
+                      {spec.tagline}
+                    </p>
+
+                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+                      {spec.description}
+                    </p>
+
+                    {/* Features list */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                      {spec.features.map((feat, idx) => (
+                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: '#0f172a', fontWeight: 500 }}>
+                          <Check size={16} color="var(--brand-green)" />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <Link to={spec.link} style={{
+                    color: 'var(--brand-emerald)',
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                    fontSize: '0.9rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    paddingTop: '16px',
+                    borderTop: '1px solid var(--border-subtle)'
+                  }}>
+                    <span>Learn More About {spec.title.split(' ')[0]} Testing</span>
+                    <ChevronRight size={16} color="var(--brand-emerald)" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* What We Do Section (All Services) */}
         <section style={{ padding: '100px 0', background: '#ffffff' }}>
           <div className="container">
             
             <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 60px auto' }}>
-              <span className="badge" style={{ marginBottom: '16px' }}>Service Capabilities</span>
+              <span className="badge" style={{ marginBottom: '16px' }}>Complete Engineering Services</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', color: '#0f172a' }}>
-                What We <span className="text-gradient">Do</span>
+                Full Range of <span className="text-gradient">Services & Solutions</span>
               </h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-                We work with companies at different stages: testing an AI idea, modernizing a legacy system, building a new product, or expanding an engineering team.
+                Beyond our flagship Software Testing & QA practices, we provide end-to-end software development, AI implementation, and IT staff outsourcing.
               </p>
             </div>
 
@@ -340,14 +513,14 @@ export const HomePage: React.FC = () => {
               gap: '20px'
             }}>
               <div>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>Full Service Portfolio</h4>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>Full Quality Engineering & QA Capabilities</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  We deliver cloud, DevOps, QA and testing, MVP development, product design, and more.
+                  Explore dedicated QA teams, accessibility audits (A11y), automated test frameworks, and penetration testing.
                 </p>
               </div>
 
               <Link to="/services/software-development/qa-services" className="btn-primary" style={{ padding: '12px 24px', fontSize: '0.9rem' }}>
-                See All Services
+                See All QA & Testing Services
               </Link>
             </div>
 
@@ -363,15 +536,15 @@ export const HomePage: React.FC = () => {
               <div>
                 <span className="badge" style={{ marginBottom: '16px' }}>Who We Are</span>
                 <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', fontWeight: 800, marginBottom: '20px', color: '#0f172a', lineHeight: 1.25 }}>
-                  Software delivery experience applied to <span className="text-gradient">AI, data, and digital products</span>
+                  19+ Years of Excellence in <span className="text-gradient">Software Testing & Quality Engineering</span>
                 </h2>
 
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '20px' }}>
-                  Magnum Quality Assurance is a software engineering company. For more than 19 years, we have built custom software for companies across Europe and the US. Our team of 600+ engineers works from four development centers and has delivered over 750 projects.
+                  Magnum Quality Assurance is a global software testing and quality engineering leader. For over 19 years, our core focus has been helping enterprises, SaaS companies, and financial institutions launch flawless digital products with total confidence.
                 </p>
 
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '28px' }}>
-                  Today, we apply that engineering foundation to AI, data, and software modernization projects. We help companies assess AI opportunities, build production-ready solutions, and manage them responsibly. Security, maintainability, and business value are part of the discussion from the start.
+                  Our team of 600+ certified QA engineers, SDETs, penetration testers, and accessibility specialists work from four delivery centers. From initial accessibility audits (WCAG 2.1) to continuous test automation and penetration security testing, we embed quality at every stage of the software lifecycle.
                 </p>
 
                 <Link to="/about-us" className="btn-secondary">
@@ -382,24 +555,24 @@ export const HomePage: React.FC = () => {
               {/* Certified Standards & Delivery Highlights */}
               <div className="glass-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-glow)' }} data-aos="zoom-in">
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '12px' }}>
-                  Certified Expertise. Proven Delivery Standards.
+                  Certified Testing Standards & Rigorous QA Processes
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '24px' }}>
-                  We combine hands-on engineering experience with ISO 27001 certification and technology partnerships across AWS, Microsoft Azure, and Databricks. This helps us build software, data, and AI solutions that meet enterprise expectations for security, reliability, and long-term maintainability.
+                  We combine ISTQB certified testing methodologies with ISO 27001 security compliance and WCAG 2.1 AA/AAA accessibility standards. This guarantees your software meets the highest enterprise demands for safety, speed, and usability.
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <ShieldCheck size={20} color="var(--brand-green)" />
-                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>ISO 27001 Certified Security & GDPR Alignment</span>
+                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>ISO 27001 Certified Security & OWASP Pen Testing</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <Cloud size={20} color="var(--brand-green)" />
-                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>AWS & Microsoft Azure Official Tier Partners</span>
+                    <Accessibility size={20} color="var(--brand-green)" />
+                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>WCAG 2.1 AA/AAA & VPAT Accessibility Compliance</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <Database size={20} color="var(--brand-green)" />
-                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>Databricks Analytics & AI Ecosystem Specialists</span>
+                    <Bot size={20} color="var(--brand-green)" />
+                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>ISTQB Certified Test Automation & SDET Specialists</span>
                   </div>
                 </div>
               </div>
@@ -421,16 +594,16 @@ export const HomePage: React.FC = () => {
               margin: '0 auto'
             }}>
               <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--brand-emerald)', letterSpacing: '1px', fontWeight: 700, marginBottom: '16px', display: 'block' }}>
-                From Our Delivery Floor
+                From Our Quality Engineering Leadership
               </span>
 
               <blockquote style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.3rem)', fontWeight: 600, color: '#0f172a', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '24px' }}>
-                “AI transformation is also a software delivery challenge. After 19 years of building enterprise systems, we know how much work sits between a promising idea and a reliable production system. That is the experience our AI experts bring to client projects.”
+                “Software testing is not an afterthought—it is the foundation of user trust. At Magnum QA, our primary focus is ensuring that every application we test is completely accessible, ultra-performant, impenetrable, and automated for rapid continuous delivery.”
               </blockquote>
 
               <div>
                 <strong style={{ fontSize: '1.1rem', color: '#0f172a', display: 'block' }}>Jakub Stadnik</strong>
-                <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Head of Delivery, Magnum Quality Assurance</span>
+                <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Head of Quality Assurance & Testing Delivery, Magnum QA</span>
               </div>
             </div>
           </div>
@@ -448,29 +621,29 @@ export const HomePage: React.FC = () => {
             <div className="responsive-stats-grid">
               <div>
                 <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: '#0f172a' }}>19+</div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>years in software delivery</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>years in software testing & QA</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: 'var(--brand-emerald)' }}>750+</div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>projects delivered</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>QA projects & audits completed</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: '#0f172a' }}>600+</div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>engineers</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 600 }}>QA engineers & SDETs</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: '#0f172a' }}>100+</div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>clients across 13 countries</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>enterprise clients across 13 countries</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', fontWeight: 800, color: 'var(--brand-emerald)' }}>95%</div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 700 }}>of clients come back</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--brand-emerald)', fontWeight: 700 }}>client retention & repeat QA engagements</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 48-Hour Demo Offer */}
+        {/* 48-Hour Free QA & Accessibility Audit Offer */}
         <section style={{ padding: '90px 0', background: '#ffffff' }} data-aos="fade-up">
           <div className="container">
             <div className="glass-card responsive-grid-demo" style={{
@@ -480,32 +653,32 @@ export const HomePage: React.FC = () => {
               borderRadius: 'var(--radius-xl)'
             }}>
               <div>
-                <span className="badge" style={{ marginBottom: '16px' }}>Rapid Proof-of-Concept</span>
+                <span className="badge" style={{ marginBottom: '16px' }}>Complimentary QA Audit</span>
                 <h3 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#0f172a', marginBottom: '16px' }}>
-                  Test Your AI Product Concept with a Demo Ready in 48 Hours
+                  Get a Free Software Testing & Accessibility Audit Report in 48 Hours
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '28px' }}>
-                  Have an idea for an AI product? We can help you assess its real potential before you invest further. Share the concept with us and, within one business day, we will prepare a focused demo that shows how the idea could work in practice.
+                  Unsure about your software's test coverage, accessibility WCAG compliance, or security vulnerabilities? Send us your URL or product demo, and our senior QA team will deliver a initial vulnerability & accessibility diagnostic report within two business days.
                 </p>
                 <Link to="/contact" className="btn-primary" style={{ padding: '14px 28px' }}>
-                  Request a Demo in 48 hours →
+                  Request Free QA & A11y Audit Report →
                 </Link>
               </div>
 
               <div style={{ background: '#ffffff', padding: '28px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-subtle)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: '16px' }}>Engineered Delivery Practices</h4>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: '16px' }}>What Your Audit Includes</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem' }}>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                     <Check size={18} color="var(--brand-green)" />
-                    <span style={{ color: '#0f172a', fontWeight: 600 }}>AI Solutions Built on 19 Years Delivery</span>
+                    <span style={{ color: '#0f172a', fontWeight: 600 }}>WCAG 2.1 Accessibility (A11y) Diagnostic</span>
                   </div>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <ShieldCheck size={18} color="var(--brand-green)" />
-                    <span style={{ color: '#0f172a', fontWeight: 600 }}>Mature Practices & Certified Security</span>
+                    <Check size={18} color="var(--brand-green)" />
+                    <span style={{ color: '#0f172a', fontWeight: 600 }}>OWASP Security & Penetration Vulnerability Scan</span>
                   </div>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <TrendingUp size={18} color="var(--brand-green)" />
-                    <span style={{ color: '#0f172a', fontWeight: 600 }}>We Measure Value Before We Build</span>
+                    <Check size={18} color="var(--brand-green)" />
+                    <span style={{ color: '#0f172a', fontWeight: 600 }}>Automation ROI & Test Architecture Roadmap</span>
                   </div>
                 </div>
               </div>
@@ -520,7 +693,7 @@ export const HomePage: React.FC = () => {
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 60px auto' }}>
               <span className="badge" style={{ marginBottom: '16px' }}>Core Differentiators</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', color: '#0f172a' }}>
-                Why Companies Choose <span className="text-gradient">Magnum Quality Assurance</span>
+                Why Companies Choose <span className="text-gradient">Magnum QA</span>
               </h2>
             </div>
 
@@ -528,11 +701,11 @@ export const HomePage: React.FC = () => {
               
               <div className="glass-card" style={{ padding: '32px', background: '#ffffff' }}>
                 <div style={{ background: 'rgba(16,185,129,0.1)', padding: '10px', borderRadius: '12px', display: 'inline-flex', marginBottom: '20px' }}>
-                  <Zap size={26} color="var(--brand-emerald)" />
+                  <Target size={26} color="var(--brand-emerald)" />
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>AI Solutions Built on Software Delivery Experience</h3>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>Testing-First Mentality</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                  Our AI advice doesn't stop at the strategy level. Because we've spent 19 years shipping enterprise software, we know what it takes to get from a working prototype to something that runs reliably in production.
+                  Unlike generic dev shops, software testing and quality assurance is our primary focus. We treat quality, accessibility, performance, and security as first-class citizens from day one.
                 </p>
               </div>
 
@@ -540,9 +713,9 @@ export const HomePage: React.FC = () => {
                 <div style={{ background: 'rgba(16,185,129,0.1)', padding: '10px', borderRadius: '12px', display: 'inline-flex', marginBottom: '20px' }}>
                   <ShieldCheck size={26} color="var(--brand-emerald)" />
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>Mature Delivery Practices, Certified Partnerships</h3>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>ISO 27001 & WCAG Compliant</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                  Our work is supported by ISO 27001 certification, GDPR-aligned processes, and long-standing partnerships with AWS, Microsoft Azure, and Databricks. Security and governance are part of how we work from the start.
+                  Our QA workflows strictly align with ISO 27001 security standards, GDPR data compliance, and WCAG 2.1 AA/AAA accessibility guidelines to protect your brand reputation.
                 </p>
               </div>
 
@@ -550,9 +723,9 @@ export const HomePage: React.FC = () => {
                 <div style={{ background: 'rgba(16,185,129,0.1)', padding: '10px', borderRadius: '12px', display: 'inline-flex', marginBottom: '20px' }}>
                   <TrendingUp size={26} color="var(--brand-emerald)" />
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>We Measure Value Before We Build</h3>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>Accelerated Time-to-Market</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                  If a use case is unlikely to pay off at your scale or with your data, we will say so and help you look for a stronger one. That is what ROI-focused means in practice.
+                  With custom CI/CD automation pipelines and experienced SDETs, we reduce release cycle times by up to 70% while maintaining zero critical production defects.
                 </p>
               </div>
 
@@ -584,7 +757,7 @@ export const HomePage: React.FC = () => {
             
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '16px' }}>
               <div>
-                <span className="badge" style={{ marginBottom: '12px' }}>Latest Updates</span>
+                <span className="badge" style={{ marginBottom: '12px' }}>Latest QA & Tech Insights</span>
                 <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0f172a' }}>
                   What's New at <span className="text-gradient">Magnum Quality Assurance</span>
                 </h2>
@@ -599,10 +772,10 @@ export const HomePage: React.FC = () => {
               
               <div className="glass-card" style={{ padding: '32px', background: '#ffffff' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--brand-emerald)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' }}>
-                  Business Insight · 2026
+                  QA & Accessibility · 2026
                 </span>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px', lineHeight: 1.4 }}>
-                  Vehicle-To-Grid (V2G): How Electric Vehicles Are Becoming Grid Assets
+                  Why WCAG 2.1 Accessibility Testing is Vital for Enterprise Legal Compliance & UX
                 </h3>
                 <Link to="/blog" style={{ color: 'var(--brand-emerald)', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>
                   Read More →
@@ -611,10 +784,10 @@ export const HomePage: React.FC = () => {
 
               <div className="glass-card" style={{ padding: '32px', background: '#ffffff' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--brand-emerald)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' }}>
-                  Business Insight · 2026
+                  Test Automation · 2026
                 </span>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px', lineHeight: 1.4 }}>
-                  UX as a Growth Driver in Asset and Wealth Management
+                  Playwright vs Cypress in 2026: Choosing the Best End-to-End Testing Framework
                 </h3>
                 <Link to="/blog" style={{ color: 'var(--brand-emerald)', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>
                   Read More →
@@ -623,10 +796,10 @@ export const HomePage: React.FC = () => {
 
               <div className="glass-card" style={{ padding: '32px', background: '#ffffff' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--brand-emerald)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' }}>
-                  Tech Insight · 2026
+                  Penetration Testing · 2026
                 </span>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px', lineHeight: 1.4 }}>
-                  How a Unified Data Lake Reduces Regulatory, Operational & AI Risk in Finance
+                  Top 10 API Security Vulnerabilities and How Pen Testing Protects Modern Cloud Apps
                 </h3>
                 <Link to="/blog" style={{ color: 'var(--brand-emerald)', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>
                   Read More →

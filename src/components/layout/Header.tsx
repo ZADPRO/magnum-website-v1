@@ -37,6 +37,20 @@ export const Header: React.FC = () => {
         {/* Desktop Navigation Links */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '28px' }} className="desktop-nav">
           
+          {/* Home Link */}
+          <Link
+            to="/"
+            style={{
+              color: currentPath === '/' ? 'var(--brand-emerald)' : 'var(--text-primary)',
+              textDecoration: 'none',
+              fontSize: '0.95rem',
+              fontWeight: 600,
+              transition: 'color 0.2s'
+            }}
+          >
+            Home
+          </Link>
+
           {/* Services Mega Menu */}
           <div 
             style={{ position: 'relative' }}
@@ -145,8 +159,8 @@ export const Header: React.FC = () => {
             )}
           </div>
 
-          {/* Other Navigation Links */}
-          {mainNavRoutes.map(route => (
+          {/* Other Navigation Links (Excluding Home as it is explicitly placed first) */}
+          {mainNavRoutes.filter(route => route.path !== '/').map(route => (
             <Link
               key={route.path}
               to={route.path}
@@ -228,7 +242,7 @@ export const Header: React.FC = () => {
               </button>
             </div>
 
-            {/* Mobile Nav Links List matching planb-theeventguide.ch style */}
+            {/* Mobile Nav Links List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
               <Link
                 to="/"
@@ -300,8 +314,8 @@ export const Header: React.FC = () => {
                 )}
               </div>
 
-              {/* Main Nav Items */}
-              {mainNavRoutes.map(route => (
+              {/* Remaining Main Nav Items (Excluding Home) */}
+              {mainNavRoutes.filter(route => route.path !== '/').map(route => (
                 <Link
                   key={route.path}
                   to={route.path}
