@@ -29,7 +29,7 @@ import homeBg from '../assets/BG/home_bg.jpeg';
 import home2Img from '../assets/home/home2.png';
 import home3Img from '../assets/home/home3.png';
 
-export const HomePage: React.FC = () => {
+export const HomePage2: React.FC = () => {
 
   const testimonialsData = [
     {

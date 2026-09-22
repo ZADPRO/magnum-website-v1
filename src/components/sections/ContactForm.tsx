@@ -18,18 +18,10 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" style={{ padding: '100px 0', background: 'var(--bg-secondary)', position: 'relative' }}>
-      <div className="container">
+    <section id="contact" style={{ padding: '80px 0', background: 'var(--bg-secondary)', position: 'relative' }}>
+      <div className="container contact-section-container">
         
-        <div style={{
-          padding: '48px',
-          borderRadius: 'var(--radius-xl)',
-          border: '1px solid var(--border-subtle)',
-          maxWidth: '960px',
-          margin: '0 auto',
-          background: '#ffffff',
-          boxShadow: '0 25px 50px rgba(15,23,42,0.06)'
-        }}>
+        <div className="contact-form-card">
           
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="badge" style={{ marginBottom: '16px' }}>Schedule a Consultation</span>
@@ -58,7 +50,7 @@ export const ContactForm: React.FC = () => {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <form onSubmit={handleSubmit} className="responsive-grid-form">
               
               <div>
                 <label style={{ display: 'block', color: '#0f172a', fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px' }}>

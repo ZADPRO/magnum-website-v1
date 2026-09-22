@@ -102,13 +102,34 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Standards & Certs */}
+          {/* Global Offices & Contact */}
           <div>
-            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>Standards</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span className="badge" style={{ fontSize: '0.75rem' }}>ISTQB Certified</span>
-              <span className="badge" style={{ fontSize: '0.75rem' }}>ISO 25010 Model</span>
-              <span className="badge" style={{ fontSize: '0.75rem' }}>WCAG 2.1 Compliant</span>
+            <h4 style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 700, marginBottom: '20px' }}>Global Offices</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.825rem', lineHeight: 1.5 }}>
+              <div>
+                <strong style={{ color: '#0f172a', display: 'block', marginBottom: '2px' }}>Corporate Office:</strong>
+                <span>Güterstrasse 8,<br />8952 Schlieren, Switzerland</span>
+              </div>
+              
+              <div>
+                <strong style={{ color: '#0f172a', display: 'block', marginBottom: '2px' }}>Branch Office:</strong>
+                <span>38/37B, No.1 Logi Street, Gugai,<br />Salem - 636006, Tamilnadu, India</span>
+              </div>
+
+              <div style={{ paddingTop: '8px', borderTop: '1px solid var(--border-subtle)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>
+                  <span style={{ fontWeight: 600, color: '#0f172a' }}>Mobile: </span>
+                  <a href="tel:+41763953921" style={{ color: 'var(--brand-emerald)', textDecoration: 'none', fontWeight: 600 }}>
+                    +41 76 395 39 21
+                  </a>
+                </div>
+                <div>
+                  <span style={{ fontWeight: 600, color: '#0f172a' }}>Email: </span>
+                  <a href="mailto:info@magnumqa.ch" style={{ color: 'var(--brand-emerald)', textDecoration: 'none', fontWeight: 600 }}>
+                    info@magnumqa.ch
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 

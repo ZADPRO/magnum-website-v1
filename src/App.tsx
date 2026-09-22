@@ -1,16 +1,23 @@
 import React from 'react';
 import { RouterProvider, useRouter } from './router/RouterContext';
 import { HomePage } from './pages/HomePage';
+import { HomePage2 } from './pages/HomePage2';
 import { QAServicesPage } from './pages/QAServicesPage';
 import { AccessibilityPage } from './pages/AccessibilityPage';
 import { ContactPage } from './pages/ContactPage';
 import { GenericServicePage } from './pages/GenericServicePage';
 import { servicesMegaMenuData, mainNavRoutes } from './router/routesData';
 import { useAOS } from './utils/useAOS';
+import { FloatingButtons } from './components/ui/FloatingButtons';
 
 const AppRoutes: React.FC = () => {
   const { currentPath } = useRouter();
   useAOS();
+
+  // Route /home2 or /home-2 to new Scalo QA HomePage2
+  if (currentPath === '/home2' || currentPath === '/home-2') {
+    return <HomePage2 />;
+  }
 
   // Root / and /home routes render dedicated Scalo HomePage
   if (currentPath === '/' || currentPath === '/home') {
@@ -68,6 +75,7 @@ export function App() {
   return (
     <RouterProvider>
       <AppRoutes />
+      <FloatingButtons />
     </RouterProvider>
   );
 }

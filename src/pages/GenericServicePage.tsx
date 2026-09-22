@@ -14,6 +14,7 @@ import {
   TrendingUp,
   ArrowRight
 } from '../components/ui/Icons';
+import home3Img from '../assets/home/home3.png';
 
 interface GenericServicePageProps {
   title: string;
@@ -90,39 +91,62 @@ export const GenericServicePage: React.FC<GenericServicePageProps> = ({ title, c
         }}>
           <div className="container">
             
-            {/* Breadcrumbs */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '24px' }}>
-              <Link to="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Home</Link>
-              <span>/</span>
-              <span>{category}</span>
-              <span>/</span>
-              <span style={{ color: 'var(--brand-green)', fontWeight: 700 }}>{title}</span>
-            </div>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '40px',
+              alignItems: 'center'
+            }}>
+              {/* Left Column: Content */}
+              <div data-aos="fade-up">
+                {/* Breadcrumbs */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '24px' }}>
+                  <Link to="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Home</Link>
+                  <span>/</span>
+                  <span>{category}</span>
+                  <span>/</span>
+                  <span style={{ color: 'var(--brand-green)', fontWeight: 700 }}>{title}</span>
+                </div>
 
-            <div style={{ maxWidth: '850px' }} data-aos="fade-up">
-              <span className="badge" style={{ marginBottom: '16px' }}>
-                <Sparkles size={16} color="var(--brand-green)" /> Enterprise {category} Division
-              </span>
+                <span className="badge" style={{ marginBottom: '16px' }}>
+                  <Sparkles size={16} color="var(--brand-green)" /> Enterprise {category} Division
+                </span>
 
-              <h1 style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)', fontWeight: 800, color: '#0f172a', marginBottom: '20px', lineHeight: 1.15 }}>
-                {title} <span className="text-gradient">Solutions & Engineering</span>
-              </h1>
+                <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', fontWeight: 800, color: '#0f172a', marginBottom: '20px', lineHeight: 1.15 }}>
+                  {title} <span className="text-gradient">Solutions & Engineering</span>
+                </h1>
 
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '24px' }}>
-                At <strong style={{ color: '#0f172a' }}>Magnum Quality Assurance</strong>, we help enterprise organizations design, build, and optimize scalable <strong style={{ color: '#0f172a' }}>{title.toLowerCase()}</strong> solutions. Leveraging over 19 years of software engineering expertise and ISO 27001 certified delivery standards, we ensure your products perform with unmatched reliability and security.
-              </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '20px' }}>
+                  At <strong style={{ color: '#0f172a' }}>Magnum Quality Assurance</strong>, we help enterprise organizations design, build, and optimize scalable <strong style={{ color: '#0f172a' }}>{title.toLowerCase()}</strong> solutions. Leveraging over 19 years of software engineering expertise and ISO 27001 certified delivery standards, we ensure your products perform with unmatched reliability and security.
+                </p>
 
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.6, marginBottom: '36px' }}>
-                Whether you are replacing legacy infrastructure, expanding your engineering velocity, or instituting continuous QA standards, our EU-based senior teams deliver measurable ROI focused on your strategic business outcomes.
-              </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '32px' }}>
+                  Whether you are replacing legacy infrastructure, expanding your engineering velocity, or instituting continuous QA standards, our EU-based senior teams deliver measurable ROI focused on your strategic business outcomes.
+                </p>
 
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                <a href="#contact" className="btn-primary" style={{ padding: '14px 28px' }}>
-                  Discuss {title} Project <ArrowRight size={18} />
-                </a>
-                <Link to="/services/software-development/qa-services" className="btn-secondary" style={{ padding: '14px 28px' }}>
-                  Explore Flagship QA Suite
-                </Link>
+                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                  <a href="#contact" className="btn-primary" style={{ padding: '14px 28px' }}>
+                    Discuss {title} Project <ArrowRight size={18} />
+                  </a>
+                  <Link to="/services/software-development/qa-services" className="btn-secondary" style={{ padding: '14px 28px' }}>
+                    Explore Flagship QA Suite
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: home3.png Image filling empty space */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} data-aos="fade-left">
+                <img
+                  src={home3Img}
+                  alt={`${title} Solutions`}
+                  style={{
+                    width: '100%',
+                    maxWidth: '460px',
+                    maxHeight: '400px',
+                    height: 'auto',
+                    objectFit: 'contain'
+                  }}
+                />
               </div>
             </div>
 

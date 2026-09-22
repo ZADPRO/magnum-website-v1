@@ -208,9 +208,21 @@ body {
   transform: scale(0.92);
 }
 
+[data-aos="flip-right"] {
+  transform: perspective(1000px) rotateY(-45deg) translateY(20px);
+}
+
+[data-aos="flip-left"] {
+  transform: perspective(1000px) rotateY(45deg) translateY(20px);
+}
+
+[data-aos="flip-up"] {
+  transform: perspective(1000px) rotateX(-45deg) translateY(20px);
+}
+
 [data-aos].aos-animate {
   opacity: 1;
-  transform: translate(0, 0) scale(1);
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translate(0, 0) scale(1);
 }
 
 /* Stagger Delays */
@@ -330,5 +342,53 @@ body {
 @media (max-width: 640px) {
   .testimonial-card-item {
     flex: 0 0 100%;
+  }
+}
+
+/* Contact Form & Deliver Section Mobile Responsive Enhancements */
+.contact-form-card {
+  padding: 48px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 25px 50px rgba(15,23,42,0.06);
+}
+
+.deliver-section-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
+.deliver-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .contact-section-container,
+  .deliver-section-container {
+    padding: 0 10px !important;
+  }
+
+  .contact-form-card {
+    padding: 24px 14px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .deliver-grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .responsive-grid-form {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
 }
