@@ -24,7 +24,6 @@ export const ContactForm: React.FC = () => {
         <div className="contact-form-card">
           
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span className="badge" style={{ marginBottom: '16px' }}>Schedule a Consultation</span>
             <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '12px', color: '#0f172a' }}>
               Ready to Elevate Your <span className="text-gradient">Product Quality?</span>
             </h2>

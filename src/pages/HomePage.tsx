@@ -93,57 +93,57 @@ export const HomePage: React.FC = () => {
     {
       title: 'Unit Tests',
       desc: 'We verify the correctness of the code in isolation to ensure component-level integrity.',
-      icon: <Code size={28} color="var(--brand-emerald)" />
+      icon: <Code size={28} />
     },
     {
       title: 'Integration Tests',
       desc: 'We ensure individual modules work together seamlessly and form a complete software product.',
-      icon: <Settings size={28} color="var(--brand-emerald)" />
+      icon: <Settings size={28} />
     },
     {
       title: 'Functional Tests',
       desc: 'We identify and suggest missing or enhanced features based strictly on product requirements.',
-      icon: <CheckCircle2 size={28} color="var(--brand-emerald)" />
+      icon: <CheckCircle2 size={28} />
     },
     {
       title: 'Usability Tests',
       desc: 'We assess the app’s user-friendliness, UI layout, accessibility, and user goal achievement.',
-      icon: <Eye size={28} color="var(--brand-emerald)" />
+      icon: <Eye size={28} />
     },
     {
       title: 'Compatibility Tests',
       desc: 'We check product compatibility across platforms, operating systems, browsers, and network setups.',
-      icon: <Globe size={28} color="var(--brand-emerald)" />
+      icon: <Globe size={28} />
     },
     {
       title: 'Performance Tests',
       desc: 'We measure system speed, latency, database bottlenecks, and performance under realistic load.',
-      icon: <Zap size={28} color="var(--brand-emerald)" />
+      icon: <Zap size={28} />
     },
     {
       title: 'Regression Tests',
       desc: 'We confirm that existing app features remain functional after adding new code or features.',
-      icon: <RefreshCw size={28} color="var(--brand-emerald)" />
+      icon: <RefreshCw size={28} />
     },
     {
       title: 'Acceptance Tests',
       desc: 'We validate product quality, business requirements, and satisfaction with actual end-users.',
-      icon: <Award size={28} color="var(--brand-emerald)" />
+      icon: <Award size={28} />
     },
     {
       title: 'QA Automation Tests',
       desc: 'We use automation tools (Playwright, Cypress, Selenium) to execute test suites and reduce manual effort.',
-      icon: <Bot size={28} color="var(--brand-emerald)" />
+      icon: <Bot size={28} />
     },
     {
       title: 'Accessibility Testing (A11y)',
       desc: 'Screen reader audits (NVDA/JAWS/VoiceOver), keyboard focus checks, and WCAG 2.1 AA/AAA compliance.',
-      icon: <Accessibility size={28} color="var(--brand-emerald)" />
+      icon: <Accessibility size={28} />
     },
     {
       title: 'Penetration & Security',
       desc: 'Ethical hacking, OWASP Top 10 vulnerability scanning, API security testing, and compliance protection.',
-      icon: <ShieldCheck size={28} color="var(--brand-emerald)" />
+      icon: <ShieldCheck size={28} />
     }
   ];
 
@@ -152,42 +152,42 @@ export const HomePage: React.FC = () => {
     {
       title: 'Functional Sustainability',
       desc: 'Your product will work as intended, meeting user expectations through rigorous testing. Enjoy peace of mind knowing your software delivers value consistently.',
-      icon: <CheckCircle2 size={26} color="var(--brand-emerald)" />
+      icon: <CheckCircle2 size={26} />
     },
     {
       title: 'Performance Efficiency',
       desc: 'Experience a fast, efficient, scalable product that performs optimally in various conditions. Resolve performance issues before they impact user satisfaction.',
-      icon: <Zap size={26} color="var(--brand-emerald)" />
+      icon: <Zap size={26} />
     },
     {
       title: 'Usability & Accessibility',
       desc: 'Delight your users with software that is easy to learn, operate, and access. Your product will be recognized as an inclusive, satisfying solution.',
-      icon: <Accessibility size={26} color="var(--brand-emerald)" />
+      icon: <Accessibility size={26} />
     },
     {
       title: 'Security Protection',
       desc: 'Rest easy with reliable data protection, penetration testing, and activity tracking. Your software’s security will instill total confidence.',
-      icon: <ShieldCheck size={26} color="var(--brand-emerald)" />
+      icon: <ShieldCheck size={26} />
     },
     {
       title: 'Multi-Platform Compatibility',
       desc: 'Integrate your system with others to avoid conflicts and enable information exchange. Improve efficiency and adaptability across your whole tech ecosystem.',
-      icon: <Globe size={26} color="var(--brand-emerald)" />
+      icon: <Globe size={26} />
     },
     {
       title: 'Data Reliability',
       desc: 'Count on a solid and trustworthy system that performs well in various situations. Your software will demonstrate maturity and swift recovery.',
-      icon: <Database size={26} color="var(--brand-emerald)" />
+      icon: <Database size={26} />
     },
     {
       title: 'Maintainability',
       desc: 'Future-proof your software with a system that is easy to update and adapt. Benefit from a modular, reusable design that simplifies improvements.',
-      icon: <Settings size={26} color="var(--brand-emerald)" />
+      icon: <Settings size={26} />
     },
     {
       title: 'Portability & Cloud Integration',
       desc: 'Run your software effortlessly across different platforms and environments. Enjoy a flexible, scalable solution on-premises or in the cloud.',
-      icon: <Cloud size={26} color="var(--brand-emerald)" />
+      icon: <Cloud size={26} />
     }
   ];
 
@@ -322,10 +322,6 @@ export const HomePage: React.FC = () => {
               
               {/* Left Column: Content */}
               <div>
-                <span className="badge" style={{ marginBottom: '20px', background: 'rgba(16,185,129,0.1)', color: 'var(--brand-emerald)', border: '1px solid rgba(16,185,129,0.25)' }}>
-                  QA Services & Product Quality
-                </span>
-
                 <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.25, marginBottom: '20px' }}>
                   Achieve the Highest Product Quality with Our <span className="text-gradient">QA Services Experts</span>
                 </h2>
@@ -363,7 +359,6 @@ export const HomePage: React.FC = () => {
           <div className="container">
             
             <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 60px auto' }}>
-              <span className="badge" style={{ marginBottom: '16px' }}>Comprehensive Test Coverage</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', color: '#0f172a' }}>
                 Types of Software Tests <span className="text-gradient">We Conduct</span>
               </h2>
@@ -393,7 +388,7 @@ export const HomePage: React.FC = () => {
                   boxSizing: 'border-box'
                 }}>
                   <div>
-                    <div style={{ background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: '14px', display: 'inline-flex', marginBottom: '20px' }}>
+                    <div className="card-icon-badge">
                       {test.icon}
                     </div>
 
@@ -417,7 +412,6 @@ export const HomePage: React.FC = () => {
           <div className="container">
             
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 50px auto' }}>
-              <span className="badge" style={{ marginBottom: '16px' }}>Proven Track Record</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#0f172a' }}>
                 Why Can You Trust <span className="text-gradient">Magnum QA</span>?
               </h2>
@@ -465,7 +459,6 @@ export const HomePage: React.FC = () => {
           <div className="container">
             
             <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 60px auto' }}>
-              <span className="badge" style={{ marginBottom: '16px' }}>ISO 25010 Quality Model</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', color: '#0f172a' }}>
                 Areas of Software <span className="text-gradient">Testing Services</span>
               </h2>
@@ -491,7 +484,7 @@ export const HomePage: React.FC = () => {
                   borderRadius: 'var(--radius-lg)',
                   boxSizing: 'border-box'
                 }}>
-                  <div style={{ background: 'rgba(16,185,129,0.1)', padding: '10px', borderRadius: '12px', display: 'inline-flex', marginBottom: '20px' }}>
+                  <div className="card-icon-badge">
                     {area.icon}
                   </div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '10px' }}>{area.title}</h3>
@@ -508,7 +501,6 @@ export const HomePage: React.FC = () => {
           <div className="deliver-section-container">
             
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 48px auto' }}>
-              <span className="badge" style={{ marginBottom: '14px' }}>Delivery Methodology</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.7rem)', fontWeight: 800, color: '#0f172a', marginBottom: '12px' }}>
                 How We Deliver <span className="text-gradient">Testing & QA Services</span>
               </h2>
@@ -589,7 +581,6 @@ export const HomePage: React.FC = () => {
               maxWidth: '960px',
               margin: '0 auto'
             }}>
-              <span className="badge" style={{ marginBottom: '16px' }}>Our Quality Expertise</span>
               
               <blockquote style={{ fontSize: 'clamp(1.1rem, 2.4vw, 1.3rem)', fontWeight: 600, color: '#0f172a', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '24px' }}>
                 “We are passionate about quality at Magnum QA. Our Quality Management System (SQMS) is inspired by the ISO 25010 framework, which defines quality as the alignment of a system with the needs of stakeholders. To ensure the best quality, we constantly grow our QA Engineers’ skills and confirm their competence through globally respected certifications such as ISTQB.”
@@ -613,7 +604,6 @@ export const HomePage: React.FC = () => {
           <div className="container">
             
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 60px auto' }}>
-              <span className="badge" style={{ marginBottom: '16px' }}>Strategic Delivery</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#0f172a', marginBottom: '16px' }}>
                 Our Proven Strategies for <span className="text-gradient">Software Testing</span>
               </h2>
@@ -621,9 +611,9 @@ export const HomePage: React.FC = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px' }}>
               
-              <div className="glass-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
-                <div style={{ background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: '14px', display: 'inline-flex', marginBottom: '20px' }}>
-                  <CheckCircle2 size={28} color="var(--brand-emerald)" />
+              <div className="glass-card" data-aos="flip-right" data-aos-delay="100" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
+                <div className="card-icon-badge">
+                  <CheckCircle2 size={28} />
                 </div>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '12px' }}>Quality Control at Every Step</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '16px' }}>
@@ -645,9 +635,9 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="glass-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
-                <div style={{ background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: '14px', display: 'inline-flex', marginBottom: '20px' }}>
-                  <FileText size={28} color="var(--brand-emerald)" />
+              <div className="glass-card" data-aos="flip-up" data-aos-delay="200" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
+                <div className="card-icon-badge">
+                  <FileText size={28} />
                 </div>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '12px' }}>Test Scenarios Documentation</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '16px' }}>
@@ -669,9 +659,9 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="glass-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
-                <div style={{ background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: '14px', display: 'inline-flex', marginBottom: '20px' }}>
-                  <TrendingUp size={28} color="var(--brand-emerald)" />
+              <div className="glass-card" data-aos="flip-left" data-aos-delay="300" style={{ padding: '36px', background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
+                <div className="card-icon-badge">
+                  <TrendingUp size={28} />
                 </div>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '12px' }}>Quality Monitoring & Evaluation</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '16px' }}>
@@ -703,7 +693,6 @@ export const HomePage: React.FC = () => {
           <div className="container">
             
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px auto' }}>
-              <span className="badge" style={{ marginBottom: '16px' }}>Client Feedback</span>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', color: '#0f172a' }}>
                 What Our Clients <span className="text-gradient">Tell Us</span>
               </h2>

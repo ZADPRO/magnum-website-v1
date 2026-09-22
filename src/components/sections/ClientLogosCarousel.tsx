@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import client1 from '../../assets/clients/01.png';
 import client2 from '../../assets/clients/02.png';
@@ -20,184 +20,44 @@ const clientLogos = [
   { id: 8, src: client8, alt: 'Client Partner 8' },
 ];
 
+// Duplicated logos array for seamless infinite linear marquee scroll
+const duplicatedLogos = [...clientLogos, ...clientLogos, ...clientLogos];
+
 export const ClientLogosCarousel: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(4);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 500) {
-        setVisibleCount(1);
-      } else if (width < 768) {
-        setVisibleCount(2);
-      } else if (width < 1024) {
-        setVisibleCount(3);
-      } else {
-        setVisibleCount(4);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const maxIndex = Math.max(0, clientLogos.length - visibleCount);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-    }, 2800);
-    return () => clearInterval(interval);
-  }, [isPaused, maxIndex]);
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
-
-  const stepPercent = 100 / visibleCount;
-
   return (
     <div style={{ padding: '28px 0', background: 'transparent' }}>
-      <div className="container" style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 12px' }}>
+      <div className="container" style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 16px' }}>
         
-        {/* Scalosoft Style Floating Pill Container */}
+        {/* Scalosoft Style Expanded Width Floating Pill Container - Infinite Auto Scroll (No Arrows/Borders/Shadows) */}
         <div 
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
           style={{
             background: '#ffffff',
             borderRadius: '999px',
-            boxShadow: '0 10px 30px rgba(15, 23, 42, 0.06)',
-            border: '1px solid var(--border-subtle)',
-            padding: '12px 16px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '8px'
+            boxShadow: 'none',
+            border: 'none',
+            padding: '16px 24px',
+            overflow: 'hidden',
+            position: 'relative'
           }}
         >
-          {/* Left Arrow Button */}
-          <button
-            onClick={handlePrev}
-            aria-label="Previous Clients"
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#94a3b8',
-              fontSize: '1.8rem',
-              fontWeight: 300,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              transition: 'all 0.2s ease',
-              flexShrink: 0,
-              lineHeight: 1
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = 'var(--brand-emerald)';
-              e.currentTarget.style.background = 'rgba(16, 185, 129, 0.08)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#94a3b8';
-              e.currentTarget.style.background = 'none';
-            }}
-          >
-            ‹
-          </button>
-
-          {/* Carousel Track Container */}
-          <div style={{ flex: 1, overflow: 'hidden' }}>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                transform: `translateX(-${currentIndex * stepPercent}%)`,
-                transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
-              }}
-            >
-              {clientLogos.map((logo) => (
-                <div
-                  key={logo.id}
+          <div className="infinite-carousel-track">
+            {duplicatedLogos.map((logo, idx) => (
+              <div key={idx} className="carousel-logo-item">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
                   style={{
-                    flex: `0 0 ${stepPercent}%`,
-                    minWidth: `${stepPercent}%`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '0 12px',
-                    boxSizing: 'border-box'
+                    maxHeight: '44px',
+                    maxWidth: '140px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    filter: 'grayscale(20%) opacity(0.9)',
+                    transition: 'filter 0.3s ease, transform 0.3s ease'
                   }}
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    style={{
-                      maxHeight: '40px',
-                      maxWidth: '130px',
-                      width: 'auto',
-                      objectFit: 'contain',
-                      filter: 'grayscale(20%) opacity(0.9)',
-                      transition: 'filter 0.3s ease, transform 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.filter = 'grayscale(0%) opacity(1)';
-                      e.currentTarget.style.transform = 'scale(1.08)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.filter = 'grayscale(20%) opacity(0.9)';
-                      e.currentTarget.style.transform = 'scale(1)';
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
+                />
+              </div>
+            ))}
           </div>
-
-          {/* Right Arrow Button */}
-          <button
-            onClick={handleNext}
-            aria-label="Next Clients"
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#94a3b8',
-              fontSize: '1.8rem',
-              fontWeight: 300,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              transition: 'all 0.2s ease',
-              flexShrink: 0,
-              lineHeight: 1
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = 'var(--brand-emerald)';
-              e.currentTarget.style.background = 'rgba(16, 185, 129, 0.08)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#94a3b8';
-              e.currentTarget.style.background = 'none';
-            }}
-          >
-            ›
-          </button>
-
         </div>
 
       </div>
