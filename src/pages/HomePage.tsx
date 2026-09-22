@@ -250,7 +250,7 @@ export const HomePage: React.FC = () => {
             <h1 style={{
               fontSize: 'clamp(2.1rem, 3.8vw, 3.4rem)',
               fontWeight: 800,
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: 'var(--font-heading)',
               lineHeight: 1.25,
               letterSpacing: '-1px',
               color: '#0f172a',
