@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 
-export function useAOS() {
+export function useAOS(trigger?: any) {
   useEffect(() => {
+    // Reset scroll position on route change
+    window.scrollTo(0, 0);
+
     const observerCallback: IntersectionObserverCallback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -12,15 +15,32 @@ export function useAOS() {
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px 50px 0px'
     });
 
-    const elements = document.querySelectorAll('[data-aos]');
-    elements.forEach(el => observer.observe(el));
+    const initAOS = () => {
+      const elements = document.querySelectorAll('[data-aos]');
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100) {
+          el.classList.add('aos-animate');
+        } else {
+          observer.observe(el);
+        }
+      });
+    };
+
+    // Run immediate scan
+    initAOS();
+
+    // Additional delayed check to catch async sub-components
+    const timer = setTimeout(initAOS, 100);
 
     return () => {
+      clearTimeout(timer);
+      const elements = document.querySelectorAll('[data-aos]');
       elements.forEach(el => observer.unobserve(el));
     };
-  }, []);
+  }, [trigger]);
 }

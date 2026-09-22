@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="glass-panel" style={{ position: 'sticky', top: 0, zIndex: 1000, background: '#ffffff', borderBottom: '1px solid var(--border-subtle)', boxShadow: '0 2px 16px rgba(15,23,42,0.04)' }}>
-      <div className="container" style={{ height: '84px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ width: '100%', maxWidth: '1720px', margin: '0 auto', padding: '0 32px', height: '84px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         
         {/* Brand Logo - Maximized & Prominently Visible */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>

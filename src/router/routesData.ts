@@ -85,7 +85,6 @@ export const mainNavRoutes = [
   { title: 'IT Outsourcing', path: '/it-outsourcing' },
   { title: 'Technologies', path: '/technologies' },
   { title: 'Industries', path: '/industries' },
-  { title: 'Case studies', path: '/case-studies' },
   { title: 'About us', path: '/about-us' },
   { title: 'Blog', path: '/blog' },
   { title: 'Career', path: '/career' }

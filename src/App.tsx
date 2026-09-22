@@ -12,7 +12,7 @@ import { FloatingButtons } from './components/ui/FloatingButtons';
 
 const AppRoutes: React.FC = () => {
   const { currentPath } = useRouter();
-  useAOS();
+  useAOS(currentPath);
 
   // Route /home2 or /home-2 to new Scalo QA HomePage2
   if (currentPath === '/home2' || currentPath === '/home-2') {
