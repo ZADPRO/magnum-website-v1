@@ -30,7 +30,11 @@ const AppRoutes: React.FC = () => {
   }
 
   // Dedicated Accessibility Testing (A11y) page route
-  if (currentPath === '/services/software-development/accessibility-testing' || currentPath === '/services/accessibility-testing') {
+  if (
+    currentPath === '/services/software-development/accessibility-testing' ||
+    currentPath === '/services/accessibility-testing' ||
+    currentPath === '/accessibility-testing'
+  ) {
     return <AccessibilityPage />;
   }
 

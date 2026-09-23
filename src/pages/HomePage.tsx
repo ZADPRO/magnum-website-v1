@@ -28,6 +28,7 @@ import {
 import homeBg from '../assets/BG/home_bg.jpeg';
 import home2Img from '../assets/home/home2.png';
 import home3Img from '../assets/home/home3.png';
+import home4Img from '../assets/home/home4.png';
 
 export const HomePage: React.FC = () => {
 
@@ -314,6 +315,70 @@ export const HomePage: React.FC = () => {
 
         {/* Client Logos Automatic Carousel between Hero & Secondary Hero */}
         <ClientLogosCarousel />
+
+        {/* Accessibility QA & European Accessibility Act (EAA) Feature Section with home4.png */}
+        <section style={{ padding: '90px 0', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-subtle)' }} data-aos="fade-up">
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '56px', alignItems: 'center' }}>
+              
+              {/* Left Column: home4.png Image */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img
+                  src={home4Img}
+                  alt="Magnum QA Accessibility Testing & European Accessibility Act Compliance"
+                  style={{
+                    width: '100%',
+                    maxWidth: '520px',
+                    height: 'auto',
+                    display: 'block',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+
+              {/* Right Column: Content related to Accessibility Testing & EAA */}
+              <div>
+                <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.25, marginBottom: '20px' }}>
+                  Ensure Your Digital Products Are Accessible to Everyone with <span className="text-gradient">Magnum QA Accessibility Testing</span>
+                </h2>
+
+                <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '16px' }}>
+                  Europe is moving towards digital accessibility with the European Commission Accessibility Act (EAA) and Référentiel Général d’Amélioration de l’Accessibilité Web (RGAA). According to the WHO, 15% of the world’s population has a disability that impacts their interaction with digital devices.
+                </p>
+
+                <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
+                  At Magnum Quality Assurance, our specialized accessibility testing ensures full digital inclusion, compliance, enhanced user experience, brand reputation, and risk management across all software platforms.
+                </p>
+
+                {/* Two Action Buttons */}
+                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+                  {/* Button 1: Internal link to dedicated Accessibility QA testing page */}
+                  <Link
+                    to="/services/software-development/accessibility-testing"
+                    className="btn-primary"
+                    style={{ borderRadius: '999px', padding: '14px 28px', fontSize: '0.95rem' }}
+                  >
+                    <span>Explore Accessibility QA</span>
+                    <ArrowRight size={18} color="#ffffff" />
+                  </Link>
+
+                  {/* Button 2: External link to European Accessibility Act (EAA) */}
+                  <a
+                    href="https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    style={{ borderRadius: '999px', padding: '14px 28px', fontSize: '0.95rem' }}
+                  >
+                    <span>European Accessibility Act (EAA)</span>
+                    <Globe size={18} color="var(--brand-emerald)" />
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
         {/* Secondary Hero Section: Achieve the Highest Product Quality with home2.png */}
         <section style={{ padding: '90px 0', background: '#ffffff', borderBottom: '1px solid var(--border-subtle)' }} data-aos="fade-up">
