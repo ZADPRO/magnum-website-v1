@@ -165,7 +165,7 @@ export const AccessibilityPage: React.FC = () => {
                 lineHeight: 1.1,
                 margin: 0
               }}>
-                Accessibility Testing
+                Accessibility <span className="text-gradient">Testing</span>
               </h1>
             </div>
           </div>
@@ -205,7 +205,7 @@ export const AccessibilityPage: React.FC = () => {
                   color: '#0f172a',
                   marginBottom: '20px'
                 }}>
-                  Ensure that your applications are accessible to everyone.
+                  Ensure that your applications are <span className="text-gradient">accessible to everyone.</span>
                 </h2>
                 <div style={{
                   width: '60px',
@@ -546,7 +546,7 @@ export const AccessibilityPage: React.FC = () => {
                 Tools & Methods
               </span>
               <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: '#0f172a', marginTop: '8px' }}>
-                Our Resources in Accessibility Testing
+                Our Resources in <span className="text-gradient">Accessibility Testing</span>
               </h2>
             </div>
 
@@ -637,7 +637,7 @@ export const AccessibilityPage: React.FC = () => {
                 Case Studies
               </span>
               <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, color: '#0f172a', marginTop: '8px' }}>
-                Accessibility Testing to Guarantee Compliance
+                Accessibility Testing to <span className="text-gradient">Guarantee Compliance</span>
               </h2>
             </div>
 
