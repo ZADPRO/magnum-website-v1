@@ -266,7 +266,7 @@ export const AccessibilityPage: React.FC = () => {
 
         {/* Section 3: Core Accessibility Testing Services (6 Cards Grid) */}
         <section style={{ padding: '80px 0', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-subtle)' }} data-aos="fade-up">
-          <div className="container">
+          <div style={{ width: '95vw', maxWidth: '95vw', margin: '0 auto', padding: '0 12px', boxSizing: 'border-box' }}>
             <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 56px auto' }}>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#0f172a', marginBottom: '16px' }}>
                 Our Services in <span className="text-gradient">Accessibility Testing</span>
@@ -276,9 +276,19 @@ export const AccessibilityPage: React.FC = () => {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '28px',
+              width: '100%',
+              margin: '0 auto'
+            }}>
               {accessibilityServices.map((service, idx) => (
                 <div key={idx} className="glass-card" data-aos={idx % 2 === 0 ? "flip-right" : "flip-left"} style={{
+                  flex: '1 1 320px',
+                  maxWidth: '380px',
+                  minWidth: '290px',
                   padding: '32px',
                   background: '#ffffff',
                   border: '1px solid var(--border-subtle)',
@@ -366,83 +376,93 @@ export const AccessibilityPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Section 5: Added Value (2-Column Template Layout) */}
+        {/* Section 5: Added Value Benefits Section */}
         <section style={{ padding: '80px 0', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-subtle)' }} data-aos="fade-up">
-          <div className="container">
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '48px',
-              alignItems: 'flex-start'
-            }}>
-              
-              {/* Left Column: Subtitle & Heading */}
-              <div>
-                <span style={{
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  color: 'var(--brand-emerald)',
-                  textTransform: 'lowercase',
-                  letterSpacing: '0.5px',
-                  display: 'inline-block',
-                  marginBottom: '12px'
-                }}>
-                  added value
-                </span>
-                <h2 style={{
-                  fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
-                  fontWeight: 800,
-                  lineHeight: 1.2,
-                  color: '#0f172a',
-                  marginBottom: '20px'
-                }}>
-                  The benefits of accessibility testing
-                </h2>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '1.025rem', lineHeight: 1.7 }}>
-                  We can help you make your digital products and services accessible. Investing in accessibility testing today has several major advantages, including:
-                </p>
-              </div>
+          <div style={{ width: '95vw', maxWidth: '95vw', margin: '0 auto', padding: '0 12px', boxSizing: 'border-box' }}>
+            
+            {/* Center-aligned Section Header */}
+            <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 56px auto' }}>
+              <span style={{
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                color: 'var(--brand-emerald)',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                display: 'inline-block',
+                marginBottom: '10px'
+              }}>
+                Added Value
+              </span>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+                fontWeight: 800,
+                lineHeight: 1.2,
+                color: '#0f172a',
+                marginBottom: '16px'
+              }}>
+                The Benefits of <span className="text-gradient">Accessibility Testing</span>
+              </h2>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                We can help you make your digital products and services accessible. Investing in accessibility testing today has several major advantages, including:
+              </p>
+            </div>
 
-              {/* Right Column: Numbered List 01 to 05 */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {addedValueBenefits.map((benefit) => (
-                  <div
-                    key={benefit.number}
-                    className="glass-card"
-                    style={{
-                      padding: '20px 24px',
-                      background: '#ffffff',
-                      border: '1px solid var(--border-subtle)',
-                      borderRadius: 'var(--radius-lg)',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '20px'
-                    }}
-                  >
+            {/* Benefit Cards Layout: 95vw width, 3 cards on row 1, 2 centered cards on row 2 */}
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '24px',
+              width: '100%',
+              margin: '0 auto'
+            }}>
+              {addedValueBenefits.map((benefit, idx) => (
+                <div
+                  key={benefit.number}
+                  className="glass-card"
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
+                  style={{
+                    flex: '1 1 calc(33.333% - 24px)',
+                    maxWidth: 'calc(33.333% - 16px)',
+                    minWidth: '300px',
+                    padding: '32px 36px',
+                    background: '#ffffff',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: 'var(--radius-xl)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                    boxSizing: 'border-box',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                  }}
+                >
+                  <div style={{ marginBottom: '18px' }}>
                     <span style={{
-                      fontSize: '1.2rem',
+                      fontSize: '1.1rem',
                       fontWeight: 800,
                       color: 'var(--brand-emerald)',
                       background: 'rgba(16,185,129,0.1)',
-                      padding: '8px 14px',
+                      border: '1px solid rgba(16,185,129,0.2)',
+                      padding: '6px 14px',
                       borderRadius: '12px',
-                      flexShrink: 0
+                      display: 'inline-block'
                     }}>
                       {benefit.number}.
                     </span>
-                    <div>
-                      <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
-                        {benefit.title}
-                      </h3>
-                      <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                        {benefit.desc}
-                      </p>
-                    </div>
                   </div>
-                ))}
-              </div>
-
+                  <div>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', marginBottom: '12px', lineHeight: 1.35 }}>
+                      {benefit.title}
+                    </h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.65, margin: 0 }}>
+                      {benefit.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
+
           </div>
         </section>
 
