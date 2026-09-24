@@ -14,39 +14,43 @@ const AppRoutes: React.FC = () => {
   const { currentPath } = useRouter();
   useAOS(currentPath);
 
+  const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1
+    ? currentPath.slice(0, -1)
+    : currentPath;
+
   // Route /home2 or /home-2 to new Scalo QA HomePage2
-  if (currentPath === '/home2' || currentPath === '/home-2') {
+  if (normalizedPath === '/home2' || normalizedPath === '/home-2') {
     return <HomePage2 />;
   }
 
   // Root / and /home routes render dedicated Scalo HomePage
-  if (currentPath === '/' || currentPath === '/home') {
+  if (normalizedPath === '/' || normalizedPath === '/home') {
     return <HomePage />;
   }
 
   // Dedicated Contact Page route
-  if (currentPath === '/contact') {
+  if (normalizedPath === '/contact') {
     return <ContactPage />;
   }
 
   // Dedicated Accessibility Testing (A11y) page route
   if (
-    currentPath === '/services/software-development/accessibility-testing' ||
-    currentPath === '/services/accessibility-testing' ||
-    currentPath === '/accessibility-testing'
+    normalizedPath === '/services/software-development/accessibility-testing' ||
+    normalizedPath === '/services/accessibility-testing' ||
+    normalizedPath === '/accessibility-testing'
   ) {
     return <AccessibilityPage />;
   }
 
   // Full QA Services & Accessibility page route
-  if (currentPath === '/services/software-development/qa-services') {
+  if (normalizedPath === '/services/software-development/qa-services') {
     return <QAServicesPage />;
   }
 
   // Check subcategory child routes
   for (const subcategory of servicesMegaMenuData) {
     for (const child of subcategory.children) {
-      if (child.path === currentPath) {
+      if (child.path === normalizedPath) {
         if (child.isFullPage) {
           return <QAServicesPage />;
         }
@@ -61,7 +65,7 @@ const AppRoutes: React.FC = () => {
   }
 
   // Check main nav routes
-  const mainRoute = mainNavRoutes.find(r => r.path === currentPath);
+  const mainRoute = mainNavRoutes.find(r => r.path === normalizedPath);
   if (mainRoute) {
     return (
       <GenericServicePage
